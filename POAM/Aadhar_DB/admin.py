@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import aadhar
+from .models import aadhar,User
 # Register your models here.
 admin.site.register(aadhar)

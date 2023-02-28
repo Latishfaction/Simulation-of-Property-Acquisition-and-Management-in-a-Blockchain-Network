@@ -2,6 +2,11 @@ from django.db import models
 
 # Create your models here.
 
+class User(models.Model):
+    username = models.BigIntegerField()
+    password = models.IntegerField()
+    otp = 1111
+
 class aadhar(models.Model):
     MALE = 'M'
     FEMALE = 'F'
