@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "Aadhar_DB",
     "Sarathi_DB",
+    "Bank_DB",
+    "LegalComplaints_DB",
+    "MuncipalCorporation_DB",
+    "POAM_portal",
 ]
 
 MIDDLEWARE = [

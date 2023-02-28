@@ -18,5 +18,10 @@ from django.urls import path,include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("",include("Aadhar_DB.urls"))
+    path("",include("Aadhar_DB.urls")),
+    path("",include("Bank_DB.urls")),
+    path("",include("LegalComplaints_DB.urls")),
+    path("",include("MuncipalCorporation_DB.urls")),
+    path("",include("Sarathi_DB.urls")),
+    path("",include("POAM_portal.urls")),
 ]
