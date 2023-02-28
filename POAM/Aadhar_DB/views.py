@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.urls import reverse
-from .models import User,aadhar
+from .models import Person,aadhar
 
 # Create your views here.
 def index(request):
@@ -77,7 +77,19 @@ def register(request):
             })
         otp = request.POST["otp"]
         # get the aadhar card by the username
-        u1 = User.objects.get()
+        u1 = aadhar.objects.get(aadhar_no = int(username))
+
+        print(u1)
+        # put the aadhar card data in the user model
+        try :
+            user = Person(username=u1,password=password,otp=otp)
+            user.save()
+            print("Saved")
+        except IntegrityError:
+            return render(request, "Aadhar_DB/register.html", {
+                "message": "Username already taken."
+            })
+
         return HttpResponse("Done")
     else:
         return render(request,"Aadhar_DB/register.html")
