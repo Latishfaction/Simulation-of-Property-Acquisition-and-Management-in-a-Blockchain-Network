@@ -1,11 +1,8 @@
 from django.db import models
-
+from django.contrib.auth.models import AbstractUser
 # Create your models here.
 
-class User(models.Model):
-    username = models.BigIntegerField()
-    password = models.IntegerField()
-    otp = 1111
+
 
 class aadhar(models.Model):
     MALE = 'M'
@@ -27,3 +24,12 @@ class aadhar(models.Model):
 
     def __str__(self):
         return f"Aadhar No : {self.aadhar_no} DOB : {self.dob}"
+
+
+
+
+    # password = models.password()
+class User(models.Model):
+    username = models.OneToOneField(aadhar, on_delete=models.CASCADE, related_name="user")
+    password = models.CharField(default="1111",max_length=30)
+    otp = models.IntegerField(default=1111)
