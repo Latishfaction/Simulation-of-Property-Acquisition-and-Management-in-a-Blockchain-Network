@@ -1,0 +1,6 @@
+
+    calculate/receive the tax on buying and selling of the property
+    get the seller and buyer data through aadhar DB
+    show the agreement and sale deed term of transfer
+    Resolve any proerty related issue/grievences while making the transaction through the smart contract.
+    Can block/unblock the property to prevent frauds.
