@@ -1,7 +1,5 @@
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
-from django.contrib.auth import authenticate, login, logout
-from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.urls import reverse
 
@@ -63,32 +61,4 @@ from django.urls import reverse
 #     else:
 #         return render(request, "Aadhar_DB/register.html")
 
-# def register(request):
-#     if request.method == "POST":
-#         username = request.POST["username"]
 
-#         # Ensure password matches confirmation
-#         password = request.POST["password"]
-#         confirmation = request.POST["confirmation"]
-#         if password != confirmation:
-#             return render(request, "Aadhar_DB/register.html", {
-#                 "message": "Passwords must match."
-#             })
-#         otp = request.POST["otp"]
-#         # get the aadhar card by the username
-#         u1 = aadhar.objects.get(aadhar_no = int(username))
-
-#         print(u1)
-#         # put the aadhar card data in the user model
-#         try :
-#             user = Person(username=u1,password=password,otp=otp)
-#             user.save()
-#             print("Saved")
-#         except IntegrityError:
-#             return render(request, "Aadhar_DB/register.html", {
-#                 "message": "Username already taken."
-#             })
-
-#         return HttpResponse("Done")
-#     else:
-#         return render(request,"Aadhar_DB/register.html")
