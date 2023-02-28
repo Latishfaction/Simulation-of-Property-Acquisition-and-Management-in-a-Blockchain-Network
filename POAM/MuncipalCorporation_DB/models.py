@@ -1,5 +1,5 @@
 from django.db import models
-from Aadhar_DB.models import Person
+from POAM_portal.models import Person
 # Create your models here.
 class Plot(models.Model):
     SQFT = 'sqft'
