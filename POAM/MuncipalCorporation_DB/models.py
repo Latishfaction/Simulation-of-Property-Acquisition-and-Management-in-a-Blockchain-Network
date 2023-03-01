@@ -1,5 +1,5 @@
 from django.db import models
-from POAM_portal.models import Person
+# from POAM_portal.models import Person
 # Create your models here.
 class Plot(models.Model):
     SQFT = 'sqft'
@@ -8,7 +8,7 @@ class Plot(models.Model):
         (SQFT, 'Square.ft'),
         (ACRE, 'Acre'),
     ]
-    owner = models.ForeignKey(Person,on_delete=models.CASCADE,related_name="plot_owner")
+    # owner = models.ForeignKey(Person,on_delete=models.CASCADE,related_name="plot_owner")
     number = models.IntegerField()
     area = models.DecimalField(max_digits=10, decimal_places=2)
     length= models.DecimalField(max_digits=10, decimal_places=2)

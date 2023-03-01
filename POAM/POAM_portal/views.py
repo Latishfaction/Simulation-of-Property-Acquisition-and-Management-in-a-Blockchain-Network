@@ -5,7 +5,7 @@ from django.urls import reverse
 from django.http import HttpResponse,HttpResponseRedirect
 # Create your views here.
 from Aadhar_DB.models import aadhar
-from .models import Person
+# from .models import Person
 
 #register the person from aadhar_db to POAM_portal
 # authentication/views.py
