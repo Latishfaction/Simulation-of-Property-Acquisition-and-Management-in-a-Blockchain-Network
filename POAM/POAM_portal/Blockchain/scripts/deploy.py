@@ -8,10 +8,8 @@ def get_account():
 
 def deploy_Agreement():
     account = get_account()
-    agreement_contract = Agreement.deploy({
-        "from":account
+    agreement_contract = Agreement.deploy({"from":account})
     # print(ss)
-    print(agreement_contract.)
     # getting the initial value
 
     # storing the value

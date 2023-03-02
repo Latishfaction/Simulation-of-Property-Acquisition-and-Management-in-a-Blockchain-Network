@@ -3,8 +3,10 @@ from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from django.urls import reverse
 from django.http import HttpResponse,HttpResponseRedirect
+from django.db import IntegrityError
 # Create your views here.
-from Aadhar_DB.models import aadhar
+from Aadhar_DB.models import aadhar,User
+from .models import Person
 # from .models import Person
 
 #register the person from aadhar_db to POAM_portal
@@ -19,9 +21,8 @@ def login_view(request):
     if request.method == 'POST':
         form = forms.LoginForm(request.POST)
         if form.is_valid():
-            username=form.cleaned_data['username']
             user = authenticate(
-                username= username,
+                username= form.cleaned_data['username'],
                 password=form.cleaned_data['password'],
             )
             if user is not None:
@@ -34,39 +35,39 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return HttpResponse("Log out done!")
+    return HttpResponseRedirect(reverse("register"))
 
 
 def register(request):
     if request.method == "POST":
         username = request.POST["username"]
-        # email = request.POST["email"]
+        email = "Deafult@test.com"
 
         # Ensure password matches confirmation
         password = request.POST["password"]
         confirmation = request.POST["confirmation"]
         if password != confirmation:
-            return render(request, "POAM_portal/register.html", {
+            return render(request, "Aadhar_DB/register.html", {
                 "message": "Passwords must match."
             })
-        u1 = aadhar.objects.get(aadhar_no=int(username))
+
         # Attempt to create new user
         try:
-            user = Person(username = u1, password = password)
-            for peoples in Person.objects.all():
-                if peoples.username.aadhar_no == user.username.aadhar_no:
-                    # print(peoples.username.aadhar_no == user.username.aadhar_no)
-                    raise Exception
-
-                    
-            else:
-                # print("save it not same")
-                user.save()
+            user = User.objects.create_user(username, email,password)
+            person = Person()
+            person.user = user
+            person.aadhar_details = aadhar.objects.get(aadhar_no = int(username)) 
+            user.save()
+            person.save()
+        except IntegrityError:
+            return render(request, "POAM_portal/register.html", {
+                "message": "Already Registered."
+            })
         except (Exception):
             return render(request, "POAM_portal/register.html", {
-                "message": "Username already taken."
+                "message": Exception,
             })
-        # login(request, user)
-        return HttpResponseRedirect(reverse("register"))
+        login(request, user)
+        return HttpResponse("Registered and login successfully!")
     else:
         return render(request, "POAM_portal/register.html")
