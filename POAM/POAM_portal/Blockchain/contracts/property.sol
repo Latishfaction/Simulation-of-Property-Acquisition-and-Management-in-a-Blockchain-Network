@@ -50,27 +50,29 @@ contract Agreement{
     function setSeller(uint256 _seller) public{
         seller = _seller;
     }
-    function setP_details(uint _number,string memory _area,string memory _length,string memory _width,string memory _society_name,string memory _society_rera_no,string memory _plot_address,string memory _north,string memory _south,string memory _east,string memory _west) public{
-        plot_details.number = _number;
-        plot_details.area = _area;
-        plot_details.length = _length;
-        plot_details.width = _width;
-        plot_details.society_name = _society_name;
-        plot_details.society_rera_no = _society_rera_no;
-        plot_details.plot_address = _plot_address;
-        plot_details.north = _north;
-        plot_details.south = _south;
-        plot_details.east = _east;
-        plot_details.west = _west;        
+    function setP_details() public{
+        plot_details.number = 1;
+        plot_details.area = "1000.00";
+        plot_details.length = "500.00";
+        plot_details.width = "500.00";
+        plot_details.society_name = "Shreesai Housing Society";
+        plot_details.society_rera_no = "002/B-56";
+        plot_details.plot_address = "Plot no 43,Near Maha-Laxmi Market, Peace Road, Laxman Nagar, Nagpur-33";
+        plot_details.north = "Other Plot";
+        plot_details.south = "Road 11X20ft";
+        plot_details.east = "Road 11X20ft";
+        plot_details.west = "Other Plot";        
         
     }
     function setPayments() public{
         // payment memory t1 = payment(1,400000,"27-02-2023");
         payment memory t1 = payment(1,400000,"27-02-2023");
-        payment memory t2 = payment(2,1000000,"23-03-2023");
+        payment memory t2 = payment(2,500000,"28-02-2023");
+        payment memory t3 = payment(3,500000,"1-03-2023");
 
         payment_data.push(t1);
         payment_data.push(t2);
+        payment_data.push(t3);
     }
     function set_total_Amt(uint256 _total_amount) public {
         total_amount = _total_amount;
@@ -85,9 +87,9 @@ contract Agreement{
         last_exe_date = _last_exe_date;
         
     }
-    function setWitness(uint256 _witness_seller,uint256 _witness_purchaser) public{
-        witness_purchaser = _witness_purchaser;
-        witness_seller = _witness_seller;
+    function setWitness() public{
+        witness_purchaser = 204970513456;
+        witness_seller = 556623238790;
     }
     function setAgreement() public{
         // purchaser = 123412341234;
@@ -177,49 +179,50 @@ contract SaleDeed{
     uint256 public witness_purchaser;
     uint256 public witness_seller;
 
-        // date = "25-02-2023";
-    function setDate(string memory _date) public{
-        date = _date;
+    function setDate() public{
+        date = "10-02-2001";
     }
-    function setPurchaser(uint256 _purchaser) public{
-        purchaser = _purchaser;
+    function setPurchaser() public{
+        purchaser = 662223509284;
     }
-    function setSeller(uint256 _seller) public{
-        seller = _seller;
+    function setSeller() public{
+        seller = 662223509284;
     }
-    function setP_details(uint _number,string memory _area,string memory _length,string memory _width,string memory _society_name,string memory _society_rera_no,string memory _plot_address,string memory _north,string memory _south,string memory _east,string memory _west) public{
-        plot_details.number = _number;
-        plot_details.area = _area;
-        plot_details.length = _length;
-        plot_details.width = _width;
-        plot_details.society_name = _society_name;
-        plot_details.society_rera_no = _society_rera_no;
-        plot_details.plot_address = _plot_address;
-        plot_details.north = _north;
-        plot_details.south = _south;
-        plot_details.east = _east;
-        plot_details.west = _west;        
+    function setP_details() public{
+        plot_details.number = 1;
+        plot_details.area = "1000.00";
+        plot_details.length = "500.00";
+        plot_details.width = "500.00";
+        plot_details.society_name = "Shreesai Housing Society";
+        plot_details.society_rera_no = "002/B-56";
+        plot_details.plot_address = "Plot no 43,Near Maha-Laxmi Market, Peace Road, Laxman Nagar, Nagpur-33";
+        plot_details.north = "Other Plot";
+        plot_details.south = "Road 11X20ft";
+        plot_details.east = "Road 11X20ft";
+        plot_details.west = "Other Plot";        
         
     }
-    function set_totalAmt(uint256 _total_amount) public {
-        total_amount = _total_amount;
+    function set_total_Amt() public {
+        total_amount = 1400000;
     }
-    function set_agreement(address _agreement_address,string memory _date) public{
-        Agreement_details.agreement_address = _agreement_address;
-        Agreement_details.date = _date;        
+    function set_agreement() public{
+        Agreement_details.agreement_address = 0x975C2f9CC74Df635770339eF2a168529b993CC17;
+        Agreement_details.date = "02-03-2023";        
     }
 
     function setPayments() public{
         // payment memory t1 = payment(1,400000,"27-02-2023");
         payment memory t1 = payment(1,400000,"27-02-2023");
-        payment memory t2 = payment(2,1000000,"23-03-2023");
+        payment memory t2 = payment(2,500000,"28-02-2023");
+        payment memory t3 = payment(3,500000,"1-03-2023");
 
         payment_data.push(t1);
         payment_data.push(t2);
+        payment_data.push(t3);
     }
-    function setWitness(uint256 _witness_seller,uint256 _witness_purchaser) public{
-        witness_purchaser = _witness_purchaser;
-        witness_seller = _witness_seller;
+    function setWitness() public{
+        witness_purchaser = 204970513456;
+        witness_seller = 556623238790;
     }
 
     // getter
