@@ -14,27 +14,35 @@ from .models import Person
 # register the person from aadhar_db to POAM_portal
 # authentication/views.py
 
-from . import forms
-
 
 def login_view(request):
-    form = forms.LoginForm()
-    message = ""
     if request.method == "POST":
-        form = forms.LoginForm(request.POST)
-        if form.is_valid():
-            user = authenticate(
-                username=form.cleaned_data["username"],
-                password=form.cleaned_data["password"],
-            )
-            if user is not None:
-                login(request, user)
-                message = f"Hello {user}! You have been logged in"
-            else:
-                message = "Login failed!"
-    return render(
-        request, "POAM_portal/login.html", context={"form": form, "message": message}
-    )
+        username = request.POST["username"]
+        password = request.POST["password"]
+        print(request.POST)
+        return HttpResponseRedirect(reverse("status", kwargs={"status": 0}))
+    else:
+        return render(request, "POAM_portal/login.html")
+
+
+# def login_view(request):
+#     form = forms.LoginForm()
+#     message = ""
+#     if request.method == "POST":
+#         form = forms.LoginForm(request.POST)
+#         if form.is_valid():
+#             user = authenticate(
+#                 username=form.cleaned_data["username"],
+#                 password=form.cleaned_data["password"],
+#             )
+#             if user is not None:
+#                 login(request, user)
+#                 message = f"Hello {user}! You have been logged in"
+#             else:
+#                 return HttpResponseRedirect(reverse("status", kwargs={"status": 0}))
+#     return render(
+#         request, "POAM_portal/login.html", context={"form": form, "message": message}
+#     )
 
 
 def logout_view(request):
@@ -45,37 +53,67 @@ def logout_view(request):
 def register(request):
     if request.method == "POST":
         username = request.POST["username"]
-        email = "Deafult@test.com"
-
-        # Ensure password matches confirmation
         password = request.POST["password"]
-        confirmation = request.POST["confirmation"]
-        if password != confirmation:
-            return render(
-                request, "Aadhar_DB/register.html", {"message": "Passwords must match."}
-            )
+        cpassword = request.POST["confirmpassword"]
 
-        # Attempt to create new user
-        try:
-            user = User.objects.create_user(username, email, password)
-            person = Person()
-            person.user = user
-            person.aadhar_details = aadhar.objects.get(aadhar_no=int(username))
-            user.save()
-            person.save()
-        except IntegrityError:
-            return render(
-                request, "POAM_portal/register.html", {"message": "Already Registered."}
-            )
-        except Exception:
+        # checking password and conform-password
+        if password != cpassword:
             return render(
                 request,
                 "POAM_portal/register.html",
                 {
-                    "message": Exception,
+                    "message": "Passwords must match.",
                 },
             )
-        login(request, user)
-        return HttpResponse("Registered and login successfully!")
+        email = request.POST["email"]
+        return HttpResponseRedirect(reverse("status", kwargs={"status": 1}))
     else:
         return render(request, "POAM_portal/register.html")
+
+
+# def register(request):
+#     if request.method == "POST":
+#         username = request.POST["username"]
+#         email = "Deafult@test.com"
+
+#         # Ensure password matches confirmation
+#         password = request.POST["password"]
+#         confirmation = request.POST["confirmation"]
+#         if password != confirmation:
+#             return render(
+#                 request, "Aadhar_DB/register.html", {"message": "Passwords must match."}
+#             )
+
+
+#         # Attempt to create new user
+#         try:
+#             user = User.objects.create_user(username, email, password)
+#             person = Person()
+#             person.user = user
+#             person.aadhar_details = aadhar.objects.get(aadhar_no=int(username))
+#             user.save()
+#             person.save()
+#         except IntegrityError:
+#             return render(
+#                 request, "POAM_portal/register.html", {"message": "Already Registered."}
+#             )
+#         except Exception:
+#             return render(
+#                 request,
+#                 "POAM_portal/register.html",
+#                 {
+#                     "message": Exception,
+#                 },
+#             )
+#         login(request, user)
+#         return HttpResponse("Registered and login successfully!")
+#     else:
+#         return render(request, "POAM_portal/register.html")
+def success_status(request, status):
+    return render(
+        request,
+        "POAM_portal/status.html",
+        {
+            "status": status,
+        },
+    )

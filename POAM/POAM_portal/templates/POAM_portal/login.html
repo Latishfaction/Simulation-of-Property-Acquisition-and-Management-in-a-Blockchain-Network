@@ -5,28 +5,27 @@
 Login
 {% endblock %}
 {% block head %}
-<!-- <link href="{% static 'POAM_portal/styles.css' %}" rel="stylesheet"> -->
 <link href="../../static/POAM_portal/style.css" rel="stylesheet">
 {% endblock %}
 {% block body %}
 <div class="container-fluid d-flex align-items-center justify-content-center">
     <div class="login-container container d-flex flex-column">
         <h2 class="heading">Login</h2>
-        <form method="post">
+        <form method="post" action="{% url 'login' %}">
             {% csrf_token %}
             <div class="mb-3 form-sections">
                 <label for="exampleInputEmail1" class="form-label">Aadhar.no</label>
-                <input type="text" class="form-control" maxlength="12">
+                <input type="text" class="form-control" maxlength="12" name="username">
 
             </div>
             <div class="mb-3 form-sections">
                 <label for="exampleInputPassword" class="form-label">Password</label>
-                <input type="password" class="form-control" id="InputPassword">
+                <input type="password" class="form-control" name="password">
             </div>
             <div class="mb-3 text-center">
                 <input type="submit" value="Login" class="btn-submit">
                 <br>
-                <span class="form-register-link">New user? <a href="#">Register here</a></span>
+                <span class="form-register-link">New user? <a href="{% url 'register' %}">Register here</a></span>
             </div>
         </form>
     </div>

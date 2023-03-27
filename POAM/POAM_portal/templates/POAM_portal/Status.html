@@ -1,0 +1,20 @@
+{% extends "POAM_portal/layout.html" %}
+{% load static %}
+
+{% block title %}
+Status
+{% endblock %}
+{% block head %}
+<link href="../../static/POAM_portal/style.css" rel="stylesheet">
+{% endblock %}
+{% block body %}
+<div class="container-fluid page-bg">
+    <div class="container">
+        {% if status %}
+        <h1>Registration Successful</h1>
+        {% else %}
+        <h1>Aadhar Not Found.</h1>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

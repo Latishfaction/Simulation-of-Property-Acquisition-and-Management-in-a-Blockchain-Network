@@ -11,11 +11,11 @@
 }
 body{
     background-color: #eee;
+    overflow: hidden;
 }
 .container-fluid{
     width: 100vw;
     height: 100vh;
-    border: 2px solid red;
 }
 .login-container{
     /* border: 2px solid blue; */
@@ -24,6 +24,13 @@ body{
     background: linear-gradient(to bottom, var(--light) 48% ,var(--dark) 130%);
     border-radius: 10px;
     padding: 2rem;
+    position: relative;
+
+    animation-name: form-entry;
+    animation-duration: 1000ms;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 
 }
 .heading{
@@ -59,4 +66,41 @@ body{
 }
 .form-register-link>a:hover{
     background-color: var(--btn-regular);
+}
+@keyframes form-entry{
+    from{
+        background-color: transparent !important;
+        display: none;
+        top: 500px;
+        opacity: 0.1;
+    }
+    to{
+        background: linear-gradient(to bottom, var(--light) 48% ,var(--dark) 130%);
+        top: 0px;
+        opacity: 1;
+    }
+}
+
+/* Register */
+.register-container{
+        /* border: 2px solid blue; */
+        width: 35%;
+        height: 75%;
+        background: linear-gradient(to bottom, var(--light) 48% ,var(--dark) 130%);
+        border-radius: 10px;
+        padding: 2rem;
+        position: relative;
+        /* overflow-y: ; */
+
+        animation-name: form-entry;
+        animation-duration: 1000ms;
+        animation-fill-mode: forwards;
+        animation-play-state: running;
+        animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+/* Registration Success Page */
+.page-bg{
+    background: linear-gradient(135deg, var(--light) 50% ,var(--dark) 100%);
+    width: 100vw;
+    height: 100vh;
 }
