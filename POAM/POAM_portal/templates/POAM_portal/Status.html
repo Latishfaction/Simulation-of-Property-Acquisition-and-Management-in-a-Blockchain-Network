@@ -9,11 +9,50 @@ Status
 {% endblock %}
 {% block body %}
 <div class="container-fluid page-bg">
-    <div class="container">
+    <div>
         {% if status %}
-        <h1>Registration Successful</h1>
+        <div class="success-message-container">
+            <h1>Registration Successful</h1>
+            <p>Now you can login in the portal.</p>
+            <a href="{% url 'login' %}" class="btn-submit">Login</a>
+        </div>
+        <span>
+            <img src={{link}} alt="thumbsup" class="emoticons" id="thumbsup1">
+            <img src={{link}} alt="thumbsup" class="emoticons" id="thumbsup2">
+            <img src={{link}} alt="thumbsup" class="emoticons" id="thumbsup3">
+            <img src={{link}} alt="thumbsup" class="emoticons" id="thumbsup4">
+            <img src={{link}} alt="thumbsup" class="emoticons" id="thumbsup5">
+            <img src={{link}} alt="thumbsup" class="emoticons" id="thumbsup6">
+            <img src={{link}} alt="thumbsup" class="emoticons" id="thumbsup7">
+            <img src={{link}} alt="thumbsup" class="emoticons" id="thumbsup8">
+            <img src={{link}} alt="thumbsup" class="emoticons" id="thumbsup9">
+            <img src={{link}} alt="thumbsup" class="emoticons" id="thumbsup10">
+            <img src={{link}} alt="thumbsup" class="emoticons" id="thumbsup11">
+            <img src={{link}} alt="thumbsup" class="emoticons" id="thumbsup12">
+            <img src={{link}} alt="thumbsup" class="emoticons" id="thumbsup13">
+        </span>
+
         {% else %}
-        <h1>Aadhar Not Found.</h1>
+        <div class="success-message-container">
+            <h1>Aadhar card not found</h1>
+            <p>The Aadhar number does not matched any of the aadhar in the database.Try login again.</p>
+            <a href="{% url 'login' %}" class="btn-submit">Login</a>
+        </div>
+        <span>
+            <img src={{link}} alt="thumbsup" class="emoticons" id="thumbsup1">
+            <img src={{link}} alt="thumbsup" class="emoticons" id="thumbsup2">
+            <img src={{link}} alt="thumbsup" class="emoticons" id="thumbsup3">
+            <img src={{link}} alt="thumbsup" class="emoticons" id="thumbsup4">
+            <img src={{link}} alt="thumbsup" class="emoticons" id="thumbsup5">
+            <img src={{link}} alt="thumbsup" class="emoticons" id="thumbsup6">
+            <img src={{link}} alt="thumbsup" class="emoticons" id="thumbsup7">
+            <img src={{link}} alt="thumbsup" class="emoticons" id="thumbsup8">
+            <img src={{link}} alt="thumbsup" class="emoticons" id="thumbsup9">
+            <img src={{link}} alt="thumbsup" class="emoticons" id="thumbsup10">
+            <img src={{link}} alt="thumbsup" class="emoticons" id="thumbsup11">
+            <img src={{link}} alt="thumbsup" class="emoticons" id="thumbsup12">
+            <img src={{link}} alt="thumbsup" class="emoticons" id="thumbsup13">
+        </span>
         {% endif %}
     </div>
 </div>

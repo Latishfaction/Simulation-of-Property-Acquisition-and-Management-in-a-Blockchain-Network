@@ -19,10 +19,27 @@ def login_view(request):
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["password"]
-        print(request.POST)
-        return HttpResponseRedirect(reverse("status", kwargs={"status": 0}))
+        user = authenticate(
+            username=username,
+            password=password,
+        )
+        if user is not None:
+            login(request, user)
+            message = f"Hello {user}! You have been logged in"
+            return render(
+                request,
+                "POAM_portal/login.html",
+                {
+                    "message": message,
+                },
+            )
+        else:
+            return HttpResponseRedirect(reverse("status", kwargs={"status": 0}))
     else:
-        return render(request, "POAM_portal/login.html")
+        return render(
+            request,
+            "POAM_portal/login.html",
+        )
 
 
 # def login_view(request):
@@ -47,7 +64,7 @@ def login_view(request):
 
 def logout_view(request):
     logout(request)
-    return HttpResponseRedirect(reverse("register"))
+    return HttpResponseRedirect(reverse("login"))
 
 
 def register(request):
@@ -110,10 +127,17 @@ def register(request):
 #     else:
 #         return render(request, "POAM_portal/register.html")
 def success_status(request, status):
+    if status == 0:
+        link = "https://em-content.zobj.net/source/microsoft-teams/337/dizzy-face_1f635.png"
+    else:
+        link = (
+            "https://em-content.zobj.net/source/microsoft-teams/337/thumbs-up_1f44d.png"
+        )
     return render(
         request,
         "POAM_portal/status.html",
         {
             "status": status,
+            "link": link,
         },
     )

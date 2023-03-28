@@ -4,13 +4,16 @@
     --light:#09C6F9;
     --dark:#045DE9;
     --btn-regular:#233645;
+    --white:#fff;
+    --background:#eee;
 }
 *{
     margin:0px;
     padding: 0px;
+    font-family: 'Roboto', sans-serif;
 }
 body{
-    background-color: #eee;
+    background-color: var(--background);
     overflow: hidden;
 }
 .container-fluid{
@@ -34,7 +37,7 @@ body{
 
 }
 .heading{
-    color: #fff;
+    color: var(--white);
     text-align: center;
     margin: 30px 0px;
 }
@@ -43,14 +46,14 @@ body{
     margin: 30px 0px 20px 0px !important;
 }
 .form-sections>label{
-    color: #fff;
+    color: var(--white);
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     letter-spacing: .8px;
 }
 .btn-submit{
     background-color: var(--btn-regular);
-    color: #fff;
+    color: var(--white);
     border: none;
     padding: 5px 30px;
     border-radius: 5px;
@@ -59,10 +62,10 @@ body{
 
 }
 .form-register-link{
-    color: #fff;
+    color: var(--white);
 }
 .form-register-link>a{
-    color: #fff;
+    color: var(--white);
 }
 .form-register-link>a:hover{
     background-color: var(--btn-regular);
@@ -101,6 +104,132 @@ body{
 /* Registration Success Page */
 .page-bg{
     background: linear-gradient(135deg, var(--light) 50% ,var(--dark) 100%);
+    background-position: center;
     width: 100vw;
     height: 100vh;
+    margin: 0px !important;
+    padding: 0px !important;
+}
+.success-message-container{
+    /* border: 2px solid red; */
+    color: var(--white);
+    width: 100vw;
+    font-family: 'Roboto', sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    top: 300px;
+}
+.success-message-container>h1{
+    padding: 10px 0px 5px 0px;
+    font-size: 4.5em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    word-spacing: 3px;
+
+
+}
+.success-message-container>p{
+    /* border: 1px solid red; */
+    width: 70%;
+    text-align: center;
+    padding: 5px 0px;
+    font-size: 2rem;
+    font-weight: 400;
+    letter-spacing: .8px;
+    word-spacing: 2px;
+}
+.success-message-container>a{
+    margin: 10px 0px;
+    text-decoration: none;
+    font-size: 1.5em;
+
+}
+.emoticons{
+    /* border: 1px solid red; */
+    width: 10%;
+    rotate: -15deg;
+
+    animation-name: status-animation;
+    animation-duration: 1000ms;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
+}
+#thumbsup1{
+    position: absolute;
+    top: 6%;
+    left: 2%;
+}
+#thumbsup2{
+    position: absolute;
+    top: -1%;
+    right: 1%;
+}
+#thumbsup3{
+    position: absolute;
+    bottom: 6%;
+    right: 0%;
+}
+#thumbsup4{
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+}
+#thumbsup5{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+}
+#thumbsup6{
+    position: absolute;
+    bottom: 15%;
+    left: 30%;
+}
+#thumbsup7{
+    position: absolute;
+    bottom: 25%;
+    right: 20%;
+}
+#thumbsup8{
+    position: absolute;
+    top: 20%;
+    left: 45%;
+}
+#thumbsup9{
+    position: absolute;
+    bottom: 3%;
+    right: 38%;
+}
+#thumbsup10{
+    position: absolute;
+    top: 40%;
+    right: 4%;
+}
+#thumbsup11{
+    position: absolute;
+    top: 14%;
+    left: 24%;
+}
+#thumbsup12{
+    position: absolute;
+    top: 2%;
+    right: 26%;
+}
+#thumbsup13{
+    position: absolute;
+    bottom: 25%;
+    left: 6%;
+}
+
+@keyframes status-animation{
+    from{
+        width: 0%;
+    }
+    to{
+    }
 }

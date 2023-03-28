@@ -1,0 +1,15 @@
+{% extends "POAM_portal/layout.html" %}
+{% load static %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block body %}
+{% if user.is_authenticated %}
+<div>
+    <h1>{{message}} {{user.username}}</h1>
+    <h1>This is home</h1>
+</div>
+{% endif %}
+{% endblock %}

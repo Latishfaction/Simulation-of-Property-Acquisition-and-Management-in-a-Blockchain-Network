@@ -8,6 +8,13 @@ Login
 <link href="../../static/POAM_portal/style.css" rel="stylesheet">
 {% endblock %}
 {% block body %}
+{% if user.is_authenticated %}
+<div>
+    <h1>{{message}}
+        <hr> This is login {{user.username}}
+    </h1>
+</div>
+{% else %}
 <div class="container-fluid d-flex align-items-center justify-content-center">
     <div class="login-container container d-flex flex-column">
         <h2 class="heading">Login</h2>
@@ -30,4 +37,6 @@ Login
         </form>
     </div>
 </div>
+{% endif %}
+
 {% endblock %}
