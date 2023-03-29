@@ -6,8 +6,8 @@ from django.http import HttpResponse, HttpResponseRedirect
 from django.db import IntegrityError
 
 # Create your views here.
-from Aadhar_DB.models import aadhar, User
 from .models import Person
+from .utils import SameAadhar, Duplicate
 
 # from .models import Person
 
@@ -19,20 +19,20 @@ def login_view(request):
     if request.method == "POST":
         username = request.POST["username"]
         password = request.POST["password"]
+        email = "Deafult@test.com"
         user = authenticate(
             username=username,
             password=password,
         )
         if user is not None:
-            login(request, user)
-            message = f"Hello {user}! You have been logged in"
-            return render(
-                request,
-                "POAM_portal/login.html",
-                {
-                    "message": message,
-                },
-            )
+            if SameAadhar(user):
+                login(request, user)
+                message = f"Hello {user}! You have been logged in"
+                # return render(request, "POAM_portal/home.html", {"message": message})
+                return HttpResponseRedirect(reverse("home", kwargs={"user": user}))
+            else:
+                return HttpResponse(SameAadhar(user))
+
         else:
             return HttpResponseRedirect(reverse("status", kwargs={"status": 0}))
     else:
@@ -72,7 +72,7 @@ def register(request):
         username = request.POST["username"]
         password = request.POST["password"]
         cpassword = request.POST["confirmpassword"]
-
+        email = request.POST["email"]
         # checking password and conform-password
         if password != cpassword:
             return render(
@@ -82,8 +82,21 @@ def register(request):
                     "message": "Passwords must match.",
                 },
             )
-        email = request.POST["email"]
-        return HttpResponseRedirect(reverse("status", kwargs={"status": 1}))
+        # validate double registration
+        if Duplicate(username):
+            return render(
+                request,
+                "POAM_portal/register.html",
+                {
+                    "message": "User Already Exists.",
+                },
+            )
+        else:
+            if SameAadhar(username):
+                return HttpResponseRedirect(reverse("status", kwargs={"status": 1}))
+            else:
+                return HttpResponseRedirect(reverse("status", kwargs={"status": 0}))
+
     else:
         return render(request, "POAM_portal/register.html")
 
@@ -139,5 +152,17 @@ def success_status(request, status):
         {
             "status": status,
             "link": link,
+        },
+    )
+
+
+@login_required(login_url="login")
+def home_view(request, user):
+    message = f"Hello {user}! You have been logged in"
+    return render(
+        request,
+        "POAM_portal/home.html",
+        {
+            "message": message,
         },
     )

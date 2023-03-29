@@ -11,5 +11,8 @@ Home
     <h1>{{message}} {{user.username}}</h1>
     <h1>This is home</h1>
 </div>
+<div>
+    <a href="{% url 'logout' %}">logout</a>
+</div>
 {% endif %}
 {% endblock %}
