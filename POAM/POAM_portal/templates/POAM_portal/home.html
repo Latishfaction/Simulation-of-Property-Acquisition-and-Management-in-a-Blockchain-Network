@@ -20,8 +20,13 @@ Home
         </div>
 
         <div class="property-cards">
-
+            {% for plot in plots %}
+            <div class="container plot-container">
+                <li>{{plot}}</li>
+            </div>
+            {% endfor %}
         </div>
+        <span class="home-heading">Shared Properties</span>
     </div>
 </div>
 {% endif %}

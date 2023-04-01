@@ -4,6 +4,7 @@ Code Utility functions which supports the views.py
 """
 from Aadhar_DB.models import aadhar, User
 from .models import Person
+from MuncipalCorporation_DB.models import Plot
 
 
 # checking if the entered aadhar no. exits in the Aadhar_DB or not
@@ -28,8 +29,23 @@ def Duplicate(username):
         return False
 
 
+def get_person_info(aadhar_info):
+    return Person.objects.get(aadhar_details=aadhar_info)
+
+
 # return aadhar details from aadhar number
+def get_aadhar_info(aadhar_no):
+    return aadhar.objects.get(aadhar_no=aadhar_no)
+
+
 def get_aadhar(aadhar_no):
-    aadhar_info = aadhar.objects.get(aadhar_no=aadhar_no)
-    person_aadhar = Person.objects.get(aadhar_details=aadhar_info)
-    return person_aadhar
+    aadhar_info = get_aadhar_info(aadhar_no)
+    person_info = get_person_info(aadhar_info)
+    return person_info
+
+
+def get_plot(aadhar_card):
+    aadhar_info = get_aadhar_info(aadhar_card)
+    person_info = get_person_info(aadhar_info)
+    plot = Plot.objects.filter(owner=person_info)
+    return plot

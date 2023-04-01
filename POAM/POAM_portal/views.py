@@ -25,7 +25,7 @@ def login_view(request):
             password=password,
         )
         if user is not None:
-            if SameAadhar(user):
+            if not SameAadhar(user.username):
                 login(request, user)
                 message = f"Hello {user}! You have been logged in"
                 # return render(request, "POAM_portal/home.html", {"message": message})
@@ -108,6 +108,7 @@ def home_view(request, user):
             "POAM_portal/home.html",
             {
                 "person": user_details.aadhar_details,
+                "plots": get_plot(user),
             },
         )
     except:
