@@ -9,7 +9,20 @@ Home
 
 {% if user.is_authenticated %}
 <div class="container-fluid">
-    <h1>Home</h1>
+    <div class="container">
+        <div class="home-greetings">{{person.first_name}} {{person.last_name}}
+        </div>
+        <div class="home-options">
+            <span class="home-heading">My Properties</span>
+            <span><a href="{% url 'bank' %}"><img src="../../static/POAM_portal/images/menu.png" alt=""
+                        id="options"></a></span>
+
+        </div>
+
+        <div class="property-cards">
+
+        </div>
+    </div>
 </div>
 {% endif %}
 {% endblock %}

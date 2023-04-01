@@ -101,14 +101,17 @@ def success_status(request, status):
 @login_required(login_url="login")
 def home_view(request, user):
     message = f"Hello {user}! You have been logged in"
-    user_details = get_aadhar(user)
-    return render(
-        request,
-        "POAM_portal/home.html",
-        {
-            "person": user_details.aadhar_details,
-        },
-    )
+    try:
+        user_details = get_aadhar(user)
+        return render(
+            request,
+            "POAM_portal/home.html",
+            {
+                "person": user_details.aadhar_details,
+            },
+        )
+    except:
+        return HttpResponseRedirect(reverse("status", kwargs={"status": 0}))
 
 
 def bank(request):
