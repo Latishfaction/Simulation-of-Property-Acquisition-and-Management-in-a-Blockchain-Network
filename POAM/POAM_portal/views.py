@@ -7,7 +7,7 @@ from django.db import IntegrityError
 
 # Create your views here.
 from .models import Person
-from .utils import SameAadhar, Duplicate
+from .utils import *
 
 # from .models import Person
 
@@ -40,26 +40,6 @@ def login_view(request):
             request,
             "POAM_portal/login.html",
         )
-
-
-# def login_view(request):
-#     form = forms.LoginForm()
-#     message = ""
-#     if request.method == "POST":
-#         form = forms.LoginForm(request.POST)
-#         if form.is_valid():
-#             user = authenticate(
-#                 username=form.cleaned_data["username"],
-#                 password=form.cleaned_data["password"],
-#             )
-#             if user is not None:
-#                 login(request, user)
-#                 message = f"Hello {user}! You have been logged in"
-#             else:
-#                 return HttpResponseRedirect(reverse("status", kwargs={"status": 0}))
-#     return render(
-#         request, "POAM_portal/login.html", context={"form": form, "message": message}
-#     )
 
 
 def logout_view(request):
@@ -101,44 +81,6 @@ def register(request):
         return render(request, "POAM_portal/register.html")
 
 
-# def register(request):
-#     if request.method == "POST":
-#         username = request.POST["username"]
-#         email = "Deafult@test.com"
-
-#         # Ensure password matches confirmation
-#         password = request.POST["password"]
-#         confirmation = request.POST["confirmation"]
-#         if password != confirmation:
-#             return render(
-#                 request, "Aadhar_DB/register.html", {"message": "Passwords must match."}
-#             )
-
-
-#         # Attempt to create new user
-#         try:
-#             user = User.objects.create_user(username, email, password)
-#             person = Person()
-#             person.user = user
-#             person.aadhar_details = aadhar.objects.get(aadhar_no=int(username))
-#             user.save()
-#             person.save()
-#         except IntegrityError:
-#             return render(
-#                 request, "POAM_portal/register.html", {"message": "Already Registered."}
-#             )
-#         except Exception:
-#             return render(
-#                 request,
-#                 "POAM_portal/register.html",
-#                 {
-#                     "message": Exception,
-#                 },
-#             )
-#         login(request, user)
-#         return HttpResponse("Registered and login successfully!")
-#     else:
-#         return render(request, "POAM_portal/register.html")
 def success_status(request, status):
     if status == 0:
         link = "https://em-content.zobj.net/source/microsoft-teams/337/dizzy-face_1f635.png"
@@ -159,10 +101,15 @@ def success_status(request, status):
 @login_required(login_url="login")
 def home_view(request, user):
     message = f"Hello {user}! You have been logged in"
+    user_details = get_aadhar(user)
     return render(
         request,
         "POAM_portal/home.html",
         {
-            "message": message,
+            "person": user_details.aadhar_details,
         },
     )
+
+
+def bank(request):
+    return render(request, "POAM_portal/bank.html")

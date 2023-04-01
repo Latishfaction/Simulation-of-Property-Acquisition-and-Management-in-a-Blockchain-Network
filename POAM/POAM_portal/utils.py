@@ -10,12 +10,11 @@ from .models import Person
 # if found then create USER and show suceess status, else show not found status
 def SameAadhar(username):
     try:
-        print("Hello", username)
-        aadhar = aadhar.objects.get(aadhar_no=username)
-        person_aadhar = Person.objects.get(aadhar_details=aadhar)
-        return True
-    except:
+        aadhari = aadhar.objects.get(aadhar_no=username)
+        person_aadhar = Person.objects.get(aadhar_details=aadhari)
         return False
+    except:
+        return True
 
 
 # Check for already registered entry on POAM_portal
@@ -27,3 +26,10 @@ def Duplicate(username):
         return True
     except:
         return False
+
+
+# return aadhar details from aadhar number
+def get_aadhar(aadhar_no):
+    aadhar_info = aadhar.objects.get(aadhar_no=aadhar_no)
+    person_aadhar = Person.objects.get(aadhar_details=aadhar_info)
+    return person_aadhar
