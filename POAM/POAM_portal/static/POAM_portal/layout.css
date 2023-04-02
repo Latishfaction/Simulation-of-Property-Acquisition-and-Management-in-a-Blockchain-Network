@@ -6,6 +6,9 @@
     padding: 0px;
     font-family: 'Roboto', sans-serif;
 }
+body{
+    overflow-y: auto;
+}
 header{
     /* border: 1px solid red; */
     width: 100vw;
@@ -83,11 +86,11 @@ header{
 /* show Plots */
 /* *********************************** */
 .plot-container{
-    padding: 0px !important;
+    padding: 5px !important;
     /* border: 2px solid red; */
     width: 65vw;
-    height: 25vh;
-    margin:10px 0px 30px 30px !important;
+    height: 28vh;
+    margin:10px 0px 40px 30px !important;
     border-radius: 20px;
     position: relative;
     font-family: 'Roboto', sans-serif;
@@ -99,7 +102,7 @@ header{
     font-weight: 500;
     font-size: 2rem;
     margin: 20px 0px 10px 25px;
-    padding: 40px 0px 5px 0px;
+    /* padding: 40px 0px 5px 0px; */
     word-spacing: 4px;
     letter-spacing: .8px;
 }
