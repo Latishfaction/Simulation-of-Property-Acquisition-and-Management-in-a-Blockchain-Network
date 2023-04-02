@@ -26,7 +26,8 @@ Home
                 <div class="plot-area">Area {{plot.area}} {{plot.unit}}</div>
                 <div class="plot-societyname">{{plot.society_name}}</div>
                 <span>
-                    <a href="#"><img src="../../static/POAM_portal/images/share.png" alt="share" class="plot-share"></a>
+                    <a href="{% url 'share' %}"><img src="../../static/POAM_portal/images/share.png" alt="share"
+                            class="plot-share"></a>
                 </span>
             </div>
             {% endfor %}

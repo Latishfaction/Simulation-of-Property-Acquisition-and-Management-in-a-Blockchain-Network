@@ -115,9 +115,9 @@ def home_view(request, user):
         return HttpResponseRedirect(reverse("status", kwargs={"status": 0}))
 
 
-@login_required(login_url="login")
-def share_property(request):
-    return render(request, "POAM_portal/share_property.html")
+# @login_required(login_url="login")
+# def share_property(request):
+#     return render(request, "POAM_portal/share_property.html")
 
 
 def bank(request):
