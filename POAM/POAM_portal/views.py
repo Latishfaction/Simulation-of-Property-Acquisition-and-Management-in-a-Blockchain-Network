@@ -25,7 +25,7 @@ def login_view(request):
             password=password,
         )
         if user is not None:
-            if not SameAadhar(user.username):
+            if not SameAadhar(user):
                 login(request, user)
                 message = f"Hello {user}! You have been logged in"
                 # return render(request, "POAM_portal/home.html", {"message": message})
@@ -115,9 +115,9 @@ def home_view(request, user):
         return HttpResponseRedirect(reverse("status", kwargs={"status": 0}))
 
 
-# @login_required(login_url="login")
-# def share_property(request):
-#     return render(request, "POAM_portal/share_property.html")
+@login_required(login_url="login")
+def share_property(request):
+    return render(request, "POAM_portal/share_property.html")
 
 
 def bank(request):

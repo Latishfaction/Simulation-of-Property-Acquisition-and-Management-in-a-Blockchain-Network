@@ -13,9 +13,9 @@ def SameAadhar(username):
     try:
         aadhari = aadhar.objects.get(aadhar_no=username)
         person_aadhar = Person.objects.get(aadhar_details=aadhari)
-        return False
-    except:
         return True
+    except:
+        return False
 
 
 # Check for already registered entry on POAM_portal
