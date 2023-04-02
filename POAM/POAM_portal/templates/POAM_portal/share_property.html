@@ -8,6 +8,35 @@ Share Property
 {% block body %}
 
 {% if user.is_authenticated %}
-<h1>Share Property</h1>
+<div class="container-fluid">
+    <div class="container">
+        <div class="home-options share-margin">
+            <span class="home-heading">Share Property</span>
+           <span><a href="{% url 'bank' %}"><img src="../../static/POAM_portal/images/menu.png" alt=""
+                        id="options"></a></span>
+            
+        </div>
+        <div id="line"></div>
+        <div class="share-property-form">
+            <div>
+                <span class="share-propertyform-label">aadhar card</span>
+                <input type="text" name="aadhar_no" maxlength="12">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <a href="#">Validate Aadhar</a>
+            <div>
+                <span class="share-propertyform-label">
+                    <img src="https://st3.depositphotos.com/6672868/13701/v/600/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="photo">
+                </span>
+            </div>
+            <div>
+                <span class="share-propertyform-label">name</span>
+                <input type="text" name="name" disabled>
+            </div>
+            
+            <a href=""><input type="submit" value="Share"><img src="../../static/POAM_portal/images/share-property.png" alt="share" id="share-property-icon"></a>
+        </div>
+    </div>
+</div>
 {% endif %}
 {% endblock %}

@@ -125,3 +125,16 @@ header{
     bottom: 20px;
     width: 3%;
 }
+/* ******************************************** */
+/* Share */
+/* *********************************** */
+.share-margin{
+    margin-bottom: 0px !important;
+}
+#line{
+    background: linear-gradient(to right, var(--light),var(--dark));
+    width: 50vw;
+    height: 1.2vh;
+    border-radius: 20px;
+    margin: 20px 80px;
+}
