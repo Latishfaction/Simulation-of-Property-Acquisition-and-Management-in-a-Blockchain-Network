@@ -133,8 +133,82 @@ header{
 }
 #line{
     background: linear-gradient(to right, var(--light),var(--dark));
-    width: 50vw;
+    width: 60vw;
     height: 1.2vh;
     border-radius: 20px;
     margin: 20px 80px;
+}
+.share-property-form{
+    background-color: var(--white);
+    width: 73%;
+    position: relative;
+    left: 80px;
+    padding: 35px;
+    border-radius: 10px;
+    border: 1px solid red;
+}
+.share-propertyform-label{
+    /* border: 1px solid rebeccapurple; */
+    text-transform: capitalize;
+    padding: 5px;
+    position: absolute;
+    left: 40px;
+    font-size: 1.3rem;
+    color: var(--nav-text);
+}
+.share-property-form-input{
+    padding: 5px 15px;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    position: relative;
+    left: 40%;
+    width: 50%;
+}
+.form-text{
+    /* border: 1px solid red; */
+    width: 90%;
+    padding-left: 40%;
+    text-align: right;
+}
+.validate-aadhar{
+    text-align: right;
+    /* border: 1px solid red; */
+    width: 90%;
+    margin: 10px 0px 20px 0px;
+}
+.validate-aadhar a{
+    background: linear-gradient(to right, var(--light),var(--dark));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+#form-profile-pic{
+    width: 20%;
+    border: 1px solid springgreen;
+    border-radius: 5px;
+    margin: 0px 0px 20px 0px;
+}
+#share-property-button{
+    /* border: 2px solid red; */
+    width: 15%;
+    position: relative;
+    background-color: var(--btn-regular);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+
+    border-radius: 5px;
+    margin: 40px 0px 0px 276px;
+}
+#share-property-button input{
+    border: none;
+    background-color: transparent;
+    color: var(--white);
+    font-weight: 400;
+    padding: 5px;
+}
+#share-property-icon{
+    width: 20%;
 }
