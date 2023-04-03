@@ -212,3 +212,52 @@ header{
 #share-property-icon{
     width: 20%;
 }
+/* ************************ */
+/* Share info */
+/* ************** */
+.sharing-info{
+    border: 1px solid red;
+    width: 73%;
+    height: auto;
+    margin: 20px 0px 30px 80px;
+    padding: 10px;
+}
+.sharing-info-heading{
+    /* border: 1px solid blue; */
+    color: var(--nav-text);
+    font-family: 'Roboto',sans-serif;
+    font-size: 1.2rem;
+    font-weight: 600;
+    word-spacing: 3px;
+}
+.property-details-info{
+    /* border: 1px dotted black; */
+    color: var(--nav-text);
+    background-color: var(--white);
+    padding: 10px;
+    margin: 10px 0px 20px 0px;
+    font-family: 'Roboto',sans-serif;
+    word-spacing: 5px;
+    border-radius: 5px;
+}
+/* ************************ */
+/* disable sharing access */
+/* ************** */
+.sharing-access-info{
+    border: 1px solid red;
+}
+.sharing-access-info-container{
+    border: 1px solid cyan;
+}
+.share-access-users{
+    border: 1px solid royalblue;
+}
+.shared-users-name-container{
+    border: 1px solid black;
+}
+#Sharedusers{
+    border: 1px solid pink;
+}
+.remove-shared-btn{
+    border: 1px wavy red;
+}
