@@ -117,8 +117,11 @@ def home_view(request, user):
 
 @login_required(login_url="login")
 def share_property(request,user):
-    print(user)
     return render(request, "POAM_portal/share_property.html")
+
+@login_required(login_url="login")
+def my_properties(request,plot_no):
+    return render(request, "POAM_portal/myproperty_view.html")
 
 
 def bank(request):

@@ -1,0 +1,23 @@
+{% extends "POAM_portal/layout.html" %}
+{% load static %}
+
+{% block title %}
+View Property
+{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+    <div class="container">
+        <div class="home-options share-margin">
+            <span class="home-heading">My Property</span>
+           <span><a href="{% url 'bank' %}"><img src="../../static/POAM_portal/images/menu.png" alt=""
+                        id="options"></a></span>
+            
+        </div>
+        <div id="line"></div>
+
+        <div><h1>Here properties ditails will be shown</h1></div>
+    </div>
+</div>
+{% endblock %}
