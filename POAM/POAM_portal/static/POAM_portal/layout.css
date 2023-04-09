@@ -145,7 +145,7 @@ header{
     left: 80px;
     padding: 35px;
     border-radius: 10px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 .share-propertyform-label{
     /* border: 1px solid rebeccapurple; */
@@ -185,7 +185,7 @@ header{
 }
 #form-profile-pic{
     width: 20%;
-    border: 1px solid springgreen;
+    /* border: 1px solid springgreen; */
     border-radius: 5px;
     margin: 0px 0px 20px 0px;
 }
@@ -216,7 +216,7 @@ header{
 /* Share info */
 /* ************** */
 .sharing-info{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 73%;
     height: auto;
     margin: 20px 0px 30px 80px;
@@ -244,20 +244,54 @@ header{
 /* disable sharing access */
 /* ************** */
 .sharing-access-info{
-    border: 1px solid red;
+    font-family: 'Roboto',"sans";
+    /* border: 1px solid red; */
+    margin-left: 78px;
+    width: 73%;
+    padding: 20px 10px;
+}
+.sharing-access-heading{
+    font-family: 'Roboto',"sans";
+    text-transform: capitalize;
+    background: linear-gradient(to right, var(--red1),var(--red2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.1rem;
+    font-weight: 700;
 }
 .sharing-access-info-container{
-    border: 1px solid cyan;
+    /* border: 1px solid cyan; */
+    background-color: var(--white);
+    padding: 20px;
+    height: 20vh;
+    position: relative;
 }
 .share-access-users{
-    border: 1px solid royalblue;
+    /* border: 1px solid royalblue; */
+    font-size: 1.1rem;
+    font-weight: 400;
+    float: left;
+    padding: 10px;
+    color: var(--nav-text);
 }
 .shared-users-name-container{
-    border: 1px solid black;
+    width: 100%;
 }
 #Sharedusers{
-    border: 1px solid pink;
+    border: 1px solid var(--nav-text);
+    width: 70%;
+    float: right;
+    padding: 10px;
+    text-transform: capitalize;
 }
-.remove-shared-btn{
-    border: 1px wavy red;
+#remove-shared-btn{
+    border: 1px solid red;
+    position: absolute;
+    left: 38%;
+    padding: 5px 20px;
+    bottom: 15px;
+    color: var(--btn-regular);
+    font-weight: 500;
+    background-color: transparent;
+    border-radius: 6px;
 }
