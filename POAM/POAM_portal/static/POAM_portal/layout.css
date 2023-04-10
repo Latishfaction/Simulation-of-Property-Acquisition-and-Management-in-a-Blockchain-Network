@@ -295,3 +295,32 @@ header{
     background-color: transparent;
     border-radius: 6px;
 }
+
+/* ******************************* */
+/* My Property View */
+/* ******************************* */
+.myproperty-info-container{
+    border: 1px solid red;
+    position: relative;
+}
+.myproperty-heading-container{
+    border: 1px solid rebeccapurple;
+}
+.myproperty-heading{
+    border: 1px solid blue;  
+}
+.plot-share{
+    border: 1px solid blue;  
+}
+.myproperty-subheading-container{
+    border: 1px solid red;
+}
+.subheading1{
+    border: 1px solid blue;
+}
+.subheading2{
+    border: 1px solid blue;
+}
+.myproperty-form-info-container{
+    border: 1px solid gray;
+}
