@@ -93,7 +93,7 @@ header{
     margin:10px 0px 40px 30px !important;
     border-radius: 20px;
     position: relative;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--roboto);
     color: var(--white);
 
     background: linear-gradient(to right, var(--light),var(--dark)120%);
@@ -251,7 +251,7 @@ header{
     padding: 20px 10px;
 }
 .sharing-access-heading{
-    font-family: 'Roboto',"sans";
+    font-family: var(--roboto);
     text-transform: capitalize;
     background: linear-gradient(to right, var(--red1),var(--red2));
     -webkit-background-clip: text;
@@ -300,27 +300,81 @@ header{
 /* My Property View */
 /* ******************************* */
 .myproperty-info-container{
-    border: 1px solid red;
+    /* border: 1px solid red; */
+    width: 60vw;
+    margin: 0px 0px 30px 80px;
+    font-family: var(--roboto);
     position: relative;
+    color: var(--nav-text);
 }
 .myproperty-heading-container{
-    border: 1px solid rebeccapurple;
+    /* border: 1px solid rebeccapurple; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px;
 }
 .myproperty-heading{
-    border: 1px solid blue;  
+    /* border: 1px solid blue;   */
+    font-weight: 600;
+    font-size: 2.3rem;
 }
-.plot-share{
-    border: 1px solid blue;  
+.myproperty-share-btn{
+    /* border: 1px solid blue;   */
 }
 .myproperty-subheading-container{
-    border: 1px solid red;
-}
-.subheading1{
-    border: 1px solid blue;
-}
-.subheading2{
-    border: 1px solid blue;
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
 }
 .myproperty-form-info-container{
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
+    margin: 20px 0px;
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+}
+.fields{
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px 15px;
+}
+.fields label{
+    /* border: 0.5px solid gold; */
+    font-size: 1.1rem;
+
+}
+.fields input{
+    color: var(--btn-regular);
+    background-color: var(--background);
+    width: 60%;
+    /* font-size: 1.1rem; */
+    text-transform: capitalize;
+    padding: 6px 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.25);
+}
+.fields textarea{
+    /* border: 0.5px solid red; */
+    color: var(--btn-regular);
+    background-color: var(--background);
+    width: 60%;
+    /* font-size: 1.1rem; */
+    text-transform: capitalize;
+    padding: 6px 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.25);
+    min-height: 120px;
+
 }

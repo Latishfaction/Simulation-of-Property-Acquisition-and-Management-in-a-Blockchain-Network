@@ -22,7 +22,7 @@ View Property
                 <span class="myproperty-heading">Property no. 1212</span>
                 <span>
                     <a href="{% url 'share' user.username %}"><img src="../../static/POAM_portal/images/share-dark.png"
-                            alt="share" class="plot-share"></a>
+                            alt="share" class="myproperty-share-btn"></a>
                 </span>
             </div>
             <div class="myproperty-subheading-container">
@@ -63,7 +63,7 @@ View Property
                 </div>
                 <div class="fields">
                     <label for="plot.no">Address</label>
-                    <textarea name="address" id="plot-address" cols="30" rows="10"></textarea>
+                    <textarea name="address" id="plot-address" cols="30" rows="10" disabled>text to fill</textarea>
                 </div>
                 <div class="fields">
                     <label for="plot.no">North</label>
