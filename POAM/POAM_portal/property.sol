@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: GPL-3.0
 
 pragma solidity >=0.6.0 <=0.8.0;
-
+pragma experimental ABIEncoderV2;
 // plot data structure
 struct Plot {
     uint number;
