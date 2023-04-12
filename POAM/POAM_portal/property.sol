@@ -34,8 +34,6 @@ contract Agreement {
     uint256 public remaining_balance_amount;
     // last execution date
     string public last_exe_date;
-    // list of transaction done
-    payment[] public payment_data;
     uint256 public witness_purchaser;
     uint256 public witness_seller;
 
@@ -65,17 +63,6 @@ contract Agreement {
         plot_details.south = "Road 11X20ft";
         plot_details.east = "Road 11X20ft";
         plot_details.west = "Other Plot";
-    }
-
-    function setPayments() public {
-        // payment memory t1 = payment(1,400000,"27-02-2023");
-        payment memory t1 = payment(1, 400000, "27-02-2023");
-        payment memory t2 = payment(2, 500000, "28-02-2023");
-        payment memory t3 = payment(3, 500000, "1-03-2023");
-
-        payment_data.push(t1);
-        payment_data.push(t2);
-        payment_data.push(t3);
     }
 
     function set_total_Amt(uint256 _total_amount) public {
@@ -138,10 +125,6 @@ contract Agreement {
 
     function getP_details() public view returns (Plot memory) {
         return plot_details;
-    }
-
-    function GetPayment() public view returns (payment[] memory) {
-        return payment_data;
     }
 
     function get_total_Amt() public view returns (uint256) {

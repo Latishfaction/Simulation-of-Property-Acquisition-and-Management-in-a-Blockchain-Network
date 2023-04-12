@@ -77,7 +77,7 @@ def deploy_agreement():
     # transact -> fill value in the smart contract
     agreement_contract = w3.eth.contract(address=tx_receipt.contractAddress, abi=abi)
 
-    print(agreement_contract.functions.getDate().call())
+    # print(agreement_contract.functions.getDate().call())
     # print(agreement_contract.functions.setDate())
 
     setDate = agreement_contract.functions.setDate("12-03-2021").build_transaction(
@@ -88,11 +88,8 @@ def deploy_agreement():
         }
     )
     signed_setDate = w3.eth.account.sign_transaction(setDate, private_key=private_key)
+
     # deploy transaction to ganache
     tx_hash = w3.eth.send_raw_transaction(signed_setDate.rawTransaction)
     tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
 
-    print(agreement_contract.functions.getDate().call())
-
-
-deploy_agreement()
