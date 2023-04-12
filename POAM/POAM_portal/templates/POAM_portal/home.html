@@ -22,13 +22,15 @@ Home
         <div class="property-cards">
             {% for plot in plots %}
             <div class="container plot-container">
-                <div class="plot-heading">Property No. {{plot.number}}</div>
-                <div class="plot-area">Area {{plot.area}} {{plot.unit}}</div>
-                <div class="plot-societyname">{{plot.society_name}}</div>
-                <span>
-                    <a href="{% url 'share' user.username %}"><img src="../../static/POAM_portal/images/share.png" alt="share"
-                            class="plot-share"></a>
-                </span>
+                <a href="{% url 'myproperty' plot.number %}">
+                    <div class="plot-heading">Property No. {{plot.number}}</div>
+                    <div class="plot-area">Area {{plot.area}} {{plot.unit}}</div>
+                    <div class="plot-societyname">{{plot.society_name}}</div>
+                    <span>
+                        <a href="{% url 'share' user.username %}"><img src="../../static/POAM_portal/images/share.png"
+                                alt="share" class="plot-share"></a>
+                    </span>
+                </a>
             </div>
             {% endfor %}
         </div>

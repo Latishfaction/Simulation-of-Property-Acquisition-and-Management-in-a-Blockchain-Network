@@ -93,7 +93,7 @@ header{
     margin:10px 0px 40px 30px !important;
     border-radius: 20px;
     position: relative;
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--roboto);
     color: var(--white);
 
     background: linear-gradient(to right, var(--light),var(--dark)120%);
@@ -145,7 +145,7 @@ header{
     left: 80px;
     padding: 35px;
     border-radius: 10px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 .share-propertyform-label{
     /* border: 1px solid rebeccapurple; */
@@ -185,7 +185,7 @@ header{
 }
 #form-profile-pic{
     width: 20%;
-    border: 1px solid springgreen;
+    /* border: 1px solid springgreen; */
     border-radius: 5px;
     margin: 0px 0px 20px 0px;
 }
@@ -216,7 +216,7 @@ header{
 /* Share info */
 /* ************** */
 .sharing-info{
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 73%;
     height: auto;
     margin: 20px 0px 30px 80px;
@@ -244,20 +244,137 @@ header{
 /* disable sharing access */
 /* ************** */
 .sharing-access-info{
-    border: 1px solid red;
+    font-family: 'Roboto',"sans";
+    /* border: 1px solid red; */
+    margin-left: 78px;
+    width: 73%;
+    padding: 20px 10px;
+}
+.sharing-access-heading{
+    font-family: var(--roboto);
+    text-transform: capitalize;
+    background: linear-gradient(to right, var(--red1),var(--red2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2.1rem;
+    font-weight: 700;
 }
 .sharing-access-info-container{
-    border: 1px solid cyan;
+    /* border: 1px solid cyan; */
+    background-color: var(--white);
+    padding: 20px;
+    height: 20vh;
+    position: relative;
 }
 .share-access-users{
-    border: 1px solid royalblue;
+    /* border: 1px solid royalblue; */
+    font-size: 1.1rem;
+    font-weight: 400;
+    float: left;
+    padding: 10px;
+    color: var(--nav-text);
 }
 .shared-users-name-container{
-    border: 1px solid black;
+    width: 100%;
 }
 #Sharedusers{
-    border: 1px solid pink;
+    border: 1px solid var(--nav-text);
+    width: 70%;
+    float: right;
+    padding: 10px;
+    text-transform: capitalize;
 }
-.remove-shared-btn{
-    border: 1px wavy red;
+#remove-shared-btn{
+    border: 1px solid red;
+    position: absolute;
+    left: 38%;
+    padding: 5px 20px;
+    bottom: 15px;
+    color: var(--btn-regular);
+    font-weight: 500;
+    background-color: transparent;
+    border-radius: 6px;
+}
+
+/* ******************************* */
+/* My Property View */
+/* ******************************* */
+.myproperty-info-container{
+    /* border: 1px solid red; */
+    width: 60vw;
+    margin: 0px 0px 30px 80px;
+    font-family: var(--roboto);
+    position: relative;
+    color: var(--nav-text);
+}
+.myproperty-heading-container{
+    /* border: 1px solid rebeccapurple; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0px;
+}
+.myproperty-heading{
+    /* border: 1px solid blue;   */
+    font-weight: 600;
+    font-size: 2.3rem;
+}
+.myproperty-share-btn{
+    /* border: 1px solid blue;   */
+}
+.myproperty-subheading-container{
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1rem;
+}
+.myproperty-form-info-container{
+    /* border: 1px solid gray; */
+    margin: 20px 0px;
+    background-color: var(--white);
+    padding: 20px;
+    border-radius: 10px;
+}
+.fields{
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin: 25px 15px;
+}
+.fields label{
+    /* border: 0.5px solid gold; */
+    font-size: 1.1rem;
+
+}
+.fields input{
+    color: var(--btn-regular);
+    background-color: var(--background);
+    width: 60%;
+    /* font-size: 1.1rem; */
+    text-transform: capitalize;
+    padding: 6px 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.25);
+}
+.fields textarea{
+    /* border: 0.5px solid red; */
+    color: var(--btn-regular);
+    background-color: var(--background);
+    width: 60%;
+    /* font-size: 1.1rem; */
+    text-transform: capitalize;
+    padding: 6px 20px;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 2px 8px 1px rgba(0, 0, 0, 0.25);
+    min-height: 120px;
+
 }
