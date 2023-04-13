@@ -1,0 +1,137 @@
+{% extends "POAM_portal/layout.html" %}
+{% load static %}
+
+{% block title %}
+View Shared Property
+{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+    <div class="container">
+        <div class="home-options share-margin" style="width: 81%;">
+            <span class="home-heading">Shared Property</span>
+            <span>By <br> <strong>Mohini Jagat Nair</strong></span>
+
+        </div>
+        <div id="line"></div>
+
+        <div class="myproperty-info-container">
+            <div class="myproperty-heading-container">
+                <span class="myproperty-heading">Property no. 1212</span>
+            </div>
+            <div class="myproperty-subheading-container">
+                <span class="subheading1">Area 2000 Sq.ft</span>
+                <span class="subheading2">Maha Laxmi Society</span>
+            </div>
+            <div class="myproperty-form-info-container">
+                <div class="fields">
+                    <label for="plot.no">Plot. No</label>
+                    <input type="text" value="text to fill" disabled>
+                </div>
+
+                <div class="fields">
+                    <label for="plotArea">Plot Area</label>
+                    <input type="text" value="text to fill" disabled>
+                </div>
+
+                <div class="fields">
+                    <label for="plot.no">Plot Length</label>
+                    <input type="text" value="text to fill" disabled>
+                </div>
+
+                <div class="fields">
+                    <label for="plot.no">Plot Width</label>
+                    <input type="text" value="text to fill" disabled>
+                </div>
+                <div class="fields">
+                    <label for="plot.no">Plot Unit</label>
+                    <input type="text" value="text to fill" disabled>
+                </div>
+                <div class="fields">
+                    <label for="plot.no">Society Name</label>
+                    <input type="text" value="text to fill" disabled>
+                </div>
+                <div class="fields">
+                    <label for="plot.no">Society Rera no</label>
+                    <input type="text" value="text to fill" disabled>
+                </div>
+                <div class="fields">
+                    <label for="plot.no">Address</label>
+                    <textarea name="address" id="plot-address" cols="30" rows="10" disabled>text to fill</textarea>
+                </div>
+                <div class="fields">
+                    <label for="plot.no">North</label>
+                    <input type="text" value="text to fill" disabled>
+                </div>
+                <div class="fields">
+                    <label for="plot.no">South</label>
+                    <input type="text" value="text to fill" disabled>
+                </div>
+                <div class="fields">
+                    <label for="plot.no">East</label>
+                    <input type="text" value="text to fill" disabled>
+                </div>
+                <div class="fields">
+                    <label for="plot.no">West</label>
+                    <input type="text" value="text to fill" disabled>
+                </div>
+
+            </div>
+
+            <!-- property chain of title -->
+            <div class="title-chain-container">
+                <div class="title-chain-heading">
+                    Chain of Property Ownership
+                </div>
+                <div class="title-content-container">
+                    <div class="title-block">
+                        <div class="title-owner-name">Rahul Suresh Kaariya</div>
+                        <div class="title-chain-mini-heading">Date of Ownership</div>
+                        <div class="title-chain-own-date">15 Jan 2023</div>
+                        <div class="title-chain-mini-heading">Date of Sell</div>
+                        <div class="title-chain-own-date">26 Sept 2023</div>
+                    </div>
+                    <div class="title-block">
+                        <div class="title-owner-name">Rahul Suresh Kajariya</div>
+                        <div class="title-chain-mini-heading">Date of Ownership</div>
+                        <div class="title-chain-own-date">15 Jan 2023</div>
+                        <div class="title-chain-mini-heading">Date of Sell</div>
+                        <div class="title-chain-own-date">26 Sept 2023</div>
+                    </div>
+                    <div class="title-block">
+                        <div class="title-owner-name">Rahul Suresh Kajariya</div>
+                        <div class="title-chain-mini-heading">Date of Ownership</div>
+                        <div class="title-chain-own-date">15 Jan 2023</div>
+                        <div class="title-chain-mini-heading">Date of Sell</div>
+                        <div class="title-chain-own-date">26 Sept 2023</div>
+                    </div>
+                    <div class="title-block">
+                        <div class="title-owner-name">Rahul Suresh Kajariya</div>
+                        <div class="title-chain-mini-heading">Date of Ownership</div>
+                        <div class="title-chain-own-date">15 Jan 2023</div>
+                        <div class="title-chain-mini-heading">Date of Sell</div>
+                        <div class="title-chain-own-date">26 Sept 2023</div>
+                    </div>
+                    <div class="title-block">
+                        <div class="title-owner-name">Rahul Suresh Kajariya</div>
+                        <div class="title-chain-mini-heading">Date of Ownership</div>
+                        <div class="title-chain-own-date">15 Jan 2023</div>
+                        <div class="title-chain-mini-heading">Date of Sell</div>
+                        <div class="title-chain-own-date">26 Sept 2023</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- shared acknowledgement -->
+                    <div class="user-info-btns" style="
+                    height: 10vh;
+                    align-items: center;
+                ">
+                        <span><a href="#" class="btn-format cancel-btn user-cancel-btn">Not Interested</a></span>
+                        <span><a href="#" class="btn-format success-btn user-agreement-btn">Proceed to Agreement</a></span>
+                    </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

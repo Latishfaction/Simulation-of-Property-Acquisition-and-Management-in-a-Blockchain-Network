@@ -123,6 +123,10 @@ def share_property(request,user):
 def my_properties(request,plot_no):
     return render(request, "POAM_portal/myproperty_view.html")
 
+@login_required(login_url="login")
+def SharedProperty_view(request,plot_no):
+    return render(request, "POAM_portal/shared_property_view.html")
+
 
 def bank(request):
     return render(request, "POAM_portal/bank.html")
