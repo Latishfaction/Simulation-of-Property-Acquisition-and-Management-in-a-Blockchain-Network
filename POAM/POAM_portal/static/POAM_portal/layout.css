@@ -436,25 +436,48 @@ header{
 /* shared ack */
 .ack-details-container{
     background-color: var(--white);
+    padding: 20px 20px;
+    border-radius: 15px;
+    height: 20vh;
 }
-.user-info-status{}
-.user-ack-info{}
+.user-info-status{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.user-ack-info{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
 .logo-text-container{
     color: var(--green);
+    text-align: right;
 }
-.aggred-logo{}
-.user-info-btns{}
-.btn-format{}
+.aggred-logo{
+    margin: 0px 10px 0px 0px;
+    width: 17%;
+}
+.user-info-btns{
+    display: flex;
+    position: relative;
+    top: 40px;
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-around;
+    margin: 10px 70px;
+}
 .cancel-btn{
     background-color: var(--btn-red);
     color: var(--white)
 }
-.user-cancel-btn{}
-.btn-format{}
+.btn-format{
+    text-decoration: none;
+    color: #fff;
+    padding: 9px 18px;
+    border-radius: 5px;
+}
 .success-btn{
     background-color: var(--green);
     color: var(--white);
-}
-.user-agreement-btn{
-    
 }
