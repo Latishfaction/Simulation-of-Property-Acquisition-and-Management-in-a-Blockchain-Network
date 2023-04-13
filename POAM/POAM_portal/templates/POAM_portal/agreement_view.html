@@ -18,6 +18,38 @@ Agreement
         <div id="line"></div>
 
         <div class="myproperty-info-container">
+            <!-- purchaser details -->
+            <div class="title-chain-heading">
+                Purchaser Details
+            </div>
+            <div class="user-contract-info-details-container">
+                <div class="user-contract-content">
+                    <span class="user-contract-name">Jagat Ram Nagpurkar</span>
+                    <span class="user-contract-id-info">
+                        <span class="aadhar-heading">Aadhar no</span>
+                        <span class="aadhar-no">123412341234</span>
+                    </span>
+                </div>
+                <img src="https://st3.depositphotos.com/6672868/13701/v/600/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="user-profile" class="user-contract-img">
+            </div>
+
+            <!-- seller details -->
+            <div class="title-chain-heading">
+                Seller Details
+            </div>
+            <div class="user-contract-info-details-container">
+                <div class="user-contract-content">
+                    <span class="user-contract-name">Jagat Ram Nagpurkar</span>
+                    <span class="user-contract-id-info">
+                        <span class="aadhar-heading">Aadhar no</span>
+                        <span class="aadhar-no">123412341234</span>
+                    </span>
+                </div>
+                <img src="https://st3.depositphotos.com/6672868/13701/v/600/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="user-profile" class="user-contract-img">
+            </div>
+
+
+            <!-- plot details -->
             <div class="title-chain-heading">
                 Plot Details
             </div>
@@ -76,14 +108,101 @@ Agreement
 
             </div>
 
-            <!-- property chain of title -->
-            <div class="title-chain-container">
+            <!-- payment details -->
                 <div class="title-chain-heading">
                     Payment Details
                 </div>
-
+                <div class="myproperty-form-info-container">
+                    <div class="row1">
+                        <span class="contract-label">
+                            Total Amount to be paid to the seller
+                        </span>
+                        <span class="contract-input">
+                            <input type="number" class="contract-field">
+                        </span>                        
+                    </div>
+                </div>
+            <!-- Agreement Duration -->
+            <div class="title-chain-heading">
+                Agreement Duration
             </div>
-            <!-- ddfgdfgfdgd -->
+            <div class="myproperty-form-info-container">
+                <div class="row1">
+                    <span class="contract-label">
+                        Date till amount to be paid
+                    </span>
+                    <span class="contract-input">
+                        <input type="date" class="contract-field">
+                    </span>                        
+                </div>
+            </div>
+            <!-- seller witness -->
+            <div class="title-chain-heading">
+                Seller Witness
+            </div>
+            <div class="myproperty-form-info-container">
+                <form action="#" method="post">
+                    {% csrf_token %}
+                    <div class="share-property-form" id="contract">
+                        <div>
+                            <span class="share-propertyform-label">aadhar card</span>
+                            <input type="text" name="aadhar_no" placeholder="12 Digit Aadhar no." maxlength="12" class="share-property-form-input" required>
+                            <div id="emailHelp" class="form-text">Enter the aadhar card of the person which you want to send property details.</div>
+                        </div>
+                        <div class="validate-aadhar">
+                            <a href="#">Validate Aadhar</a>
+                        </div>
+                        <div>
+                            <span>
+                                <img src="https://st3.depositphotos.com/6672868/13701/v/600/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="photo" id="form-profile-pic">
+                            </span>
+                        </div>
+                        <div>
+                            <span class="share-propertyform-label">name</span>
+                            <input type="text" name="name" class="share-property-form-input" disabled>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <a href="#" class="btn-format btn-contract">Send to Purchaser</a>
+
+            <!-- purchaser witness -->
+            <div class="title-chain-heading">
+                Purchaser Witness
+            </div>
+            <div class="myproperty-form-info-container">
+                <form action="#" method="post">
+                    {% csrf_token %}
+                    <div class="share-property-form" id="contract">
+                        <div>
+                            <span class="share-propertyform-label">aadhar card</span>
+                            <input type="text" name="aadhar_no" placeholder="12 Digit Aadhar no." maxlength="12" class="share-property-form-input" required>
+                            <div id="emailHelp" class="form-text">Enter the aadhar card of the person which you want to send property details.</div>
+                        </div>
+                        <div class="validate-aadhar">
+                            <a href="#">Validate Aadhar</a>
+                        </div>
+                        <div>
+                            <span>
+                                <img src="https://st3.depositphotos.com/6672868/13701/v/600/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="photo" id="form-profile-pic">
+                            </span>
+                        </div>
+                        <div>
+                            <span class="share-propertyform-label">name</span>
+                            <input type="text" name="name" class="share-property-form-input" disabled>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <!-- buttons -->
+            <div class="user-info-btns" style="
+            height: 10vh;
+            align-items: center;
+        ">
+                <span><a href="#" class="btn-format cancel-btn user-cancel-btn">Cancel</a></span>
+                <span><a href="#" class="btn-format success-btn user-agreement-btn">Create Agreement</a></span>
+            </div>
         </div>
     </div>
 </div>

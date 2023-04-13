@@ -481,3 +481,44 @@ header{
     background-color: var(--green);
     color: var(--white);
 }
+
+/* Agreement */
+.user-contract-info-details-container{
+    background-color: var(--white);
+    /* border: 1px solid red; */
+    border-radius: 10px;
+    padding: 15px 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.user-contract-content{
+    /* border: 1px solid; */
+    display: flex;
+    flex-direction: column;
+}
+.user-contract-name{
+    font-size: 1.5rem;
+    word-spacing: 5px;
+    font-weight: 500;
+    margin: 0px 0px 10px 0px;
+}
+.user-contract-id-info{
+    font-size: 1.2rem;
+    margin: 20px 0px;
+}
+.aadhar-heading{
+    font-weight: 500;
+    margin: 0px 80px 0px 0px;
+}
+.aadhar-no{}
+.user-contract-img{
+    width: 20%;
+}
+.btn-contract{
+    background-color: var(--btn-regular);
+    padding: 10px 30px;
+    position: relative;
+    left: 37%;
+}
