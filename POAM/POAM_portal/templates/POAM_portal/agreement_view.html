@@ -1,0 +1,90 @@
+{% extends "POAM_portal/layout.html" %}
+{% load static %}
+
+{% block title %}
+Agreement
+{% endblock %}
+
+{% block body %}
+
+<div class="container-fluid">
+    <div class="container">
+        <div class="home-options share-margin">
+            <span class="home-heading">Agreement</span>
+            <span><a href="{% url 'bank' %}"><img src="../../static/POAM_portal/images/menu.png" alt=""
+                        id="options"></a></span>
+
+        </div>
+        <div id="line"></div>
+
+        <div class="myproperty-info-container">
+            <div class="title-chain-heading">
+                Plot Details
+            </div>
+            <div class="myproperty-form-info-container">
+                <div class="fields">
+                    <label for="plot.no">Plot. No</label>
+                    <input type="text" value="text to fill" disabled>
+                </div>
+
+                <div class="fields">
+                    <label for="plotArea">Plot Area</label>
+                    <input type="text" value="text to fill" disabled>
+                </div>
+
+                <div class="fields">
+                    <label for="plot.no">Plot Length</label>
+                    <input type="text" value="text to fill" disabled>
+                </div>
+
+                <div class="fields">
+                    <label for="plot.no">Plot Width</label>
+                    <input type="text" value="text to fill" disabled>
+                </div>
+                <div class="fields">
+                    <label for="plot.no">Plot Unit</label>
+                    <input type="text" value="text to fill" disabled>
+                </div>
+                <div class="fields">
+                    <label for="plot.no">Society Name</label>
+                    <input type="text" value="text to fill" disabled>
+                </div>
+                <div class="fields">
+                    <label for="plot.no">Society Rera no</label>
+                    <input type="text" value="text to fill" disabled>
+                </div>
+                <div class="fields">
+                    <label for="plot.no">Address</label>
+                    <textarea name="address" id="plot-address" cols="30" rows="10" disabled>text to fill</textarea>
+                </div>
+                <div class="fields">
+                    <label for="plot.no">North</label>
+                    <input type="text" value="text to fill" disabled>
+                </div>
+                <div class="fields">
+                    <label for="plot.no">South</label>
+                    <input type="text" value="text to fill" disabled>
+                </div>
+                <div class="fields">
+                    <label for="plot.no">East</label>
+                    <input type="text" value="text to fill" disabled>
+                </div>
+                <div class="fields">
+                    <label for="plot.no">West</label>
+                    <input type="text" value="text to fill" disabled>
+                </div>
+
+            </div>
+
+            <!-- property chain of title -->
+            <div class="title-chain-container">
+                <div class="title-chain-heading">
+                    Payment Details
+                </div>
+
+            </div>
+            <!-- ddfgdfgfdgd -->
+        </div>
+    </div>
+</div>
+{% endblock %}
