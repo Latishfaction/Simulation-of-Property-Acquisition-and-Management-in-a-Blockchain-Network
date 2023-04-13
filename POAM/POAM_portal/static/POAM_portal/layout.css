@@ -435,18 +435,26 @@ header{
 }
 /* shared ack */
 .ack-details-container{
-
+    background-color: var(--white);
 }
-.user-info-status{
-
-}
-.logo-text-container{}
+.user-info-status{}
 .user-ack-info{}
+.logo-text-container{
+    color: var(--green);
+}
 .aggred-logo{}
 .user-info-btns{}
 .btn-format{}
-.cancel-btn{}
+.cancel-btn{
+    background-color: var(--btn-red);
+    color: var(--white)
+}
 .user-cancel-btn{}
 .btn-format{}
-.success-btn{}
-.user-agreement-btn{}
+.success-btn{
+    background-color: var(--green);
+    color: var(--white);
+}
+.user-agreement-btn{
+    
+}
