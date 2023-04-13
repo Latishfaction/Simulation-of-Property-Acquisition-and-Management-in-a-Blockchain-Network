@@ -378,3 +378,75 @@ header{
     min-height: 120px;
 
 }
+
+/* Chain of title */
+.title-chain-container{
+    font-family: var(--roboto);
+    color:var(--nav-text);
+    /* border: 1px solid; */
+    margin: 20px 0px;
+
+}
+.title-chain-heading{
+    font-size: 1.6rem;
+    margin: 10px 0px;
+    font-weight: 600;
+}
+.title-content-container{
+    background-color: var(--white);
+    /* border: 1px solid red; */
+    display: flex;
+    flex-direction: row;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    justify-content: left;
+    overflow-x: auto;
+    margin: 10px 0px;
+    padding: 20px;
+    border-radius: 10px;
+}
+.title-block{
+    background-color: var(--background);
+    padding: 15px;
+    /* border: 1px solid; */
+    border-radius: 10px;
+    margin: 0px 15px;
+    min-width: 200px;
+    /* text-align: center;*/
+
+}
+.title-owner-name{
+    font-size: 1.2rem;
+    font-weight: 600;
+    /* text-align: center; */
+    margin: 0px 0px 8px 0px;
+
+}
+.title-chain-mini-heading{
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin: 0px 0px 5px 0px;
+
+}
+.title-chain-own-date{
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+/* shared ack */
+.ack-details-container{
+
+}
+.user-info-status{
+
+}
+.logo-text-container{}
+.user-ack-info{}
+.aggred-logo{}
+.user-info-btns{}
+.btn-format{}
+.cancel-btn{}
+.user-cancel-btn{}
+.btn-format{}
+.success-btn{}
+.user-agreement-btn{}
