@@ -131,5 +131,8 @@ def SharedProperty_view(request,plot_no):
 def agreement_view(request,plot_no):
     return render(request, "POAM_portal/agreement_view.html")
 
+def saledeed_view(request,plot_no):
+    return render(request,"POAM_portal/saledeed_view.html")
+
 def bank(request):
     return render(request, "POAM_portal/bank.html")
