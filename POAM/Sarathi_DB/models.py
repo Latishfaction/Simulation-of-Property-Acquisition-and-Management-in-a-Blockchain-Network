@@ -14,13 +14,6 @@ class blacklist(models.Model):
     Property_case = models.ForeignKey(Complaint,on_delete=models.CASCADE,related_name="proprty_case")
     is_blocked = models.BooleanField(default=False)
 
-# chain of people
-class chain_of_title(models.Model):
-    plot = models.ForeignKey(Plot,on_delete=models.CASCADE,related_name="plot_owner_name",default=None)
-    # year,month,day from datetime.date
-    onwership_date = models.DateField()
-    selling_date = models.DateField(null=True)
-
 class plot_agreement(models.Model):
     purchaser = models.ForeignKey(Person,on_delete=models.CASCADE,related_name="plot_purchaser")
     purchaser_sign = models.BooleanField(default=False)
