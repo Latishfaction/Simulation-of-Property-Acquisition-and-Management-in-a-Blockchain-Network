@@ -24,3 +24,10 @@ class Plot(models.Model):
 
     def __str__(self):
         return f"{self.number} | {self.owner}"
+
+# chain of people
+class chain_of_title(models.Model):
+    owner_name = models.ForeignKey(Plot,on_delete=models.CASCADE,related_name="plot_owner_name",default=None)
+    # year,month,day from datetime.date
+    onwership_date = models.DateField()
+    selling_date = models.DateField()

@@ -19,6 +19,7 @@ header{
 #nav-logo{
     background: linear-gradient(to right, var(--light),var(--dark));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 1.6rem;
     font-weight: 800;
@@ -45,12 +46,14 @@ header{
 #activated{
     background: linear-gradient(to right, var(--light),var(--dark));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 500;
 }
 .home-heading{
     background: linear-gradient(to right, var(--light),var(--dark));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 2.5rem;
     font-weight: 800;
@@ -179,6 +182,7 @@ header{
 .validate-aadhar a{
     background: linear-gradient(to right, var(--light),var(--dark));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 800;
     font-size: 1.2rem;
@@ -255,6 +259,7 @@ header{
     text-transform: capitalize;
     background: linear-gradient(to right, var(--red1),var(--red2));
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-size: 2.1rem;
     font-weight: 700;
@@ -320,9 +325,9 @@ header{
     font-weight: 600;
     font-size: 2.3rem;
 }
-.myproperty-share-btn{
-    /* border: 1px solid blue;   */
-}
+/* .myproperty-share-btn{
+    border: 1px solid blue;
+}*/
 .myproperty-subheading-container{
     /* border: 1px solid red; */
     display: flex;
@@ -512,7 +517,7 @@ header{
     font-weight: 500;
     margin: 0px 80px 0px 0px;
 }
-.aadhar-no{}
+/* .aadhar-no{} */
 .user-contract-img{
     width: 20%;
 }
