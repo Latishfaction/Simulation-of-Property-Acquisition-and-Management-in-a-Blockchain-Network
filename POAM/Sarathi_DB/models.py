@@ -30,3 +30,7 @@ class plot_agreement(models.Model):
 
     buyer_witness = models.ForeignKey(Person,on_delete=models.CASCADE,related_name="plot_buyer_witness")
     purchaser_witness_sign = models.BooleanField(default=False)
+
+
+class proxy_agreement(models.Model):
+    proxy_agreement_details = models.ForeignKey(plot_agreement,on_delete=models.CASCADE,related_name="prxy_agrmnt")

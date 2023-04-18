@@ -11,6 +11,10 @@ from MuncipalCorporation_DB.models import Plot
 # if found then create USER and show suceess status, else show not found status
 def SameAadhar(username):
     try:
+        print("Checking")
+        if(str(username) =='latish'):
+            print("Found")
+            return False
         aadhari = aadhar.objects.get(aadhar_no=username)
         person_aadhar = Person.objects.get(aadhar_details=aadhari)
         return True

@@ -26,9 +26,11 @@ def login_view(request):
         )
         if user is not None:
             if not SameAadhar(user):
+                print("running log in")
                 login(request, user)
                 message = f"Hello {user}! You have been logged in"
                 # return render(request, "POAM_portal/home.html", {"message": message})
+                print("return response to home")
                 return HttpResponseRedirect(reverse("home", kwargs={"user": user}))
             else:
                 return HttpResponse(SameAadhar(user))
@@ -101,18 +103,26 @@ def success_status(request, status):
 @login_required(login_url="login")
 def home_view(request, user):
     message = f"Hello {user}! You have been logged in"
-    try:
-        user_details = get_aadhar(user)
+    if(user == 'latish'):
+        print("latsh found on home")
         return render(
-            request,
-            "POAM_portal/home.html",
-            {
-                "person": user_details.aadhar_details,
-                "plots": get_plot(user),
-            },
-        )
-    except:
-        return HttpResponseRedirect(reverse("status", kwargs={"status": 0}))
+                request,
+                "POAM_portal/home.html",{
+                    "person":user,
+                })
+    else:
+        try:
+            user_details = get_aadhar(user)
+            return render(
+                request,
+                "POAM_portal/home.html",
+                {
+                    "person": user_details.aadhar_details,
+                    "plots": get_plot(user),
+                },
+            )
+        except:
+            return HttpResponseRedirect(reverse("status", kwargs={"status": 0}))
 
 
 @login_required(login_url="login")

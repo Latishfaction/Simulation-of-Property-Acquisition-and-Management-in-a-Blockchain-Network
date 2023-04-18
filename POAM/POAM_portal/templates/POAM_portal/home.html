@@ -8,6 +8,11 @@ Home
 {% block body %}
 
 {% if user.is_authenticated %}
+{% if user.username == 'latish' %}
+    <div>
+        <h1>Hello latish</h1>
+    </div>
+{% else %}
 <div class="container-fluid">
     <div class="container">
         <div class="home-greetings">{{person.first_name}} {{person.last_name}}
@@ -37,5 +42,6 @@ Home
         <span class="home-heading">Shared Properties</span>
     </div>
 </div>
+{% endif %}
 {% endif %}
 {% endblock %}

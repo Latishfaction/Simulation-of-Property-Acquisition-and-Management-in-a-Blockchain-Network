@@ -128,7 +128,7 @@ body{
     justify-content: center;
 
     position: relative;
-    top: 300px;
+    top: 240px;
 }
 .success-message-container>h1{
     padding: 10px 0px 5px 0px;
@@ -157,11 +157,11 @@ body{
 }
 .emoticons{
     /* border: 1px solid red; */
-    width: 10%;
+    width: 9%;
     rotate: -15deg;
 
     animation-name: status-animation;
-    animation-duration: 1000ms;
+    animation-duration: 1500ms;
     animation-fill-mode: forwards;
     animation-play-state: running;
     animation-timing-function: cubic-bezier(0.23, 1, 0.320, 1);
