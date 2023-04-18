@@ -91,11 +91,18 @@ View Property
                 </div>
                 <div class="title-content-container">
                     <div class="title-block">
-                        <div class="title-owner-name">Rahul Suresh Kaariya</div>
+                        {% for title in titles %}
+                        <!-- <h1>{{title.owner}}</h1>
+                        <h1>{{title.plot}}</h1>
+                        <h1>{{title.ownership_date}}</h1>
+                        <h1>{{title.selling_date}}</h1> -->
+                        <div class="title-owner-name">{{title.owner.aadhar_details.first_name}} {{title.owner.aadhar_details.middle_name}} {{title.owner.aadhar_details.last_name}}</div>
+                        
                         <div class="title-chain-mini-heading">Date of Ownership</div>
                         <div class="title-chain-own-date">15 Jan 2023</div>
                         <div class="title-chain-mini-heading">Date of Sell</div>
                         <div class="title-chain-own-date">26 Sept 2023</div>
+                        {% endfor %}
                     </div>
                     <!-- <div class="title-block">
                         <div class="title-owner-name">Rahul Suresh Kajariya</div>
