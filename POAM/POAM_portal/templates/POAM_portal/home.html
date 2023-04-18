@@ -27,7 +27,7 @@ Home
         <div class="property-cards">
             {% for plot in plots %}
             <div class="container plot-container">
-                <a href="{% url 'myproperty' plot.number %}">
+                <a href="{% url 'myproperty' plot.number %}" class="format-link">
                     <div class="plot-heading">Property No. {{plot.number}}</div>
                     <div class="plot-area">Area {{plot.area}} {{plot.unit}}</div>
                     <div class="plot-societyname">{{plot.society_name}}</div>

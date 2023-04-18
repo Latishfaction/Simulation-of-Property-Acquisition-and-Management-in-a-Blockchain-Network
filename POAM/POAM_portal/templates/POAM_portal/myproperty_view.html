@@ -19,67 +19,67 @@ View Property
 
         <div class="myproperty-info-container">
             <div class="myproperty-heading-container">
-                <span class="myproperty-heading">Property no. 1212</span>
+                <span class="myproperty-heading">Property no.{{property.number}}</span>
                 <span>
                     <a href="{% url 'share' user.username %}"><img src="../../static/POAM_portal/images/share-dark.png"
                             alt="share" class="myproperty-share-btn"></a>
                 </span>
             </div>
             <div class="myproperty-subheading-container">
-                <span class="subheading1">Area 2000 Sq.ft</span>
-                <span class="subheading2">Maha Laxmi Society</span>
+                <span class="subheading1">Area {{property.area}} {{property.unit}}</span>
+                <span class="subheading2">{{property.society_name}}</span>
             </div>
             <div class="myproperty-form-info-container">
                 <div class="fields">
                     <label for="plot.no">Plot. No</label>
-                    <input type="text" value="text to fill" disabled>
+                    <input type="text" value="{{property.number}}" disabled>
                 </div>
 
                 <div class="fields">
                     <label for="plotArea">Plot Area</label>
-                    <input type="text" value="text to fill" disabled>
+                    <input type="text" value="{{property.area}}" disabled>
                 </div>
 
                 <div class="fields">
                     <label for="plot.no">Plot Length</label>
-                    <input type="text" value="text to fill" disabled>
+                    <input type="text" value="{{property.length}}" disabled>
                 </div>
 
                 <div class="fields">
                     <label for="plot.no">Plot Width</label>
-                    <input type="text" value="text to fill" disabled>
+                    <input type="text" value="{{property.width}}" disabled>
                 </div>
                 <div class="fields">
                     <label for="plot.no">Plot Unit</label>
-                    <input type="text" value="text to fill" disabled>
+                    <input type="text" value="{{property.unit}}" disabled>
                 </div>
                 <div class="fields">
                     <label for="plot.no">Society Name</label>
-                    <input type="text" value="text to fill" disabled>
+                    <input type="text" value="{{property.society_name}}" disabled>
                 </div>
                 <div class="fields">
                     <label for="plot.no">Society Rera no</label>
-                    <input type="text" value="text to fill" disabled>
+                    <input type="text" value="{{property.society_rera_no}}" disabled>
                 </div>
                 <div class="fields">
                     <label for="plot.no">Address</label>
-                    <textarea name="address" id="plot-address" cols="30" rows="10" disabled>text to fill</textarea>
+                    <textarea name="address" id="plot-address" cols="30" rows="10" disabled>{{property.plot_address}}</textarea>
                 </div>
                 <div class="fields">
                     <label for="plot.no">North</label>
-                    <input type="text" value="text to fill" disabled>
+                    <input type="text" value="{{property.north}}" disabled>
                 </div>
                 <div class="fields">
                     <label for="plot.no">South</label>
-                    <input type="text" value="text to fill" disabled>
+                    <input type="text" value="{{property.south}}" disabled>
                 </div>
                 <div class="fields">
                     <label for="plot.no">East</label>
-                    <input type="text" value="text to fill" disabled>
+                    <input type="text" value="{{property.east}}" disabled>
                 </div>
                 <div class="fields">
                     <label for="plot.no">West</label>
-                    <input type="text" value="text to fill" disabled>
+                    <input type="text" value="{{property.west}}" disabled>
                 </div>
 
             </div>
@@ -97,7 +97,7 @@ View Property
                         <div class="title-chain-mini-heading">Date of Sell</div>
                         <div class="title-chain-own-date">26 Sept 2023</div>
                     </div>
-                    <div class="title-block">
+                    <!-- <div class="title-block">
                         <div class="title-owner-name">Rahul Suresh Kajariya</div>
                         <div class="title-chain-mini-heading">Date of Ownership</div>
                         <div class="title-chain-own-date">15 Jan 2023</div>
@@ -110,21 +110,7 @@ View Property
                         <div class="title-chain-own-date">15 Jan 2023</div>
                         <div class="title-chain-mini-heading">Date of Sell</div>
                         <div class="title-chain-own-date">26 Sept 2023</div>
-                    </div>
-                    <div class="title-block">
-                        <div class="title-owner-name">Rahul Suresh Kajariya</div>
-                        <div class="title-chain-mini-heading">Date of Ownership</div>
-                        <div class="title-chain-own-date">15 Jan 2023</div>
-                        <div class="title-chain-mini-heading">Date of Sell</div>
-                        <div class="title-chain-own-date">26 Sept 2023</div>
-                    </div>
-                    <div class="title-block">
-                        <div class="title-owner-name">Rahul Suresh Kajariya</div>
-                        <div class="title-chain-mini-heading">Date of Ownership</div>
-                        <div class="title-chain-own-date">15 Jan 2023</div>
-                        <div class="title-chain-mini-heading">Date of Sell</div>
-                        <div class="title-chain-own-date">26 Sept 2023</div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
 

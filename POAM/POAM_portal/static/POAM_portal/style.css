@@ -231,7 +231,13 @@ body{
     bottom: 25%;
     left: 6%;
 }
-
+.format-link{
+    color: var(--white);
+    text-decoration: none;
+}
+.format-link:hover{
+    text-decoration: underline;
+}
 @keyframes status-animation{
     from{
         width: 0%;

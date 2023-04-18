@@ -118,7 +118,7 @@ def home_view(request, user):
                 "POAM_portal/home.html",
                 {
                     "person": user_details.aadhar_details,
-                    "plots": get_plot(user),
+                    "plots": get_plot_withAadhar(user),
                 },
             )
         except:
@@ -131,7 +131,14 @@ def share_property(request,user):
 
 @login_required(login_url="login")
 def my_properties(request,plot_no):
-    return render(request, "POAM_portal/myproperty_view.html")
+    # get the property from plot no and show it in the html page
+    property_details=get_plot_withPlotno(plot_no)
+    titles = property_details.plot_owner_name.all()
+    print(titles)
+    return render(request, "POAM_portal/myproperty_view.html",{
+        "property":property_details,
+        "titles":titles,
+    })
 
 @login_required(login_url="login")
 def SharedProperty_view(request,plot_no):

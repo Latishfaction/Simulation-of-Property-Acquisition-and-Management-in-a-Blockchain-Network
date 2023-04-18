@@ -48,8 +48,12 @@ def get_aadhar(aadhar_no):
     return person_info
 
 
-def get_plot(aadhar_card):
+def get_plot_withAadhar(aadhar_card):
     aadhar_info = get_aadhar_info(aadhar_card)
     person_info = get_person_info(aadhar_info)
     plot = Plot.objects.filter(owner=person_info)
     return plot
+
+def get_plot_withPlotno(plot_no):
+    plot_details = Plot.objects.get(number=plot_no)
+    return plot_details
