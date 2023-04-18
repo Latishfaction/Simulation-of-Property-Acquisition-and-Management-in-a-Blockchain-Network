@@ -133,7 +133,7 @@ def share_property(request,user):
 def my_properties(request,plot_no):
     # get the property from plot no and show it in the html page
     property_details=get_plot_withPlotno(plot_no)
-    titles = property_details.plot_owner_name.all()
+    titles = property_details.master_plot_details.all()
     print(titles)
     return render(request, "POAM_portal/myproperty_view.html",{
         "property":property_details,
