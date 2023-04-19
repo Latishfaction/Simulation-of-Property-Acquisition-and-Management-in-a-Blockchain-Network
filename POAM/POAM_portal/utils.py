@@ -57,3 +57,5 @@ def get_plot_withAadhar(aadhar_card):
 def get_plot_withPlotno(plot_no):
     plot_details = Plot.objects.get(number=plot_no)
     return plot_details
+
+# def getsharedAckStatus()

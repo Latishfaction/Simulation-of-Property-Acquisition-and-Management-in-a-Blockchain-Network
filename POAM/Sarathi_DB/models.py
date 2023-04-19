@@ -6,6 +6,8 @@ from POAM_portal.models import Person
 
 class Plot_details(models.Model):
     details = models.ForeignKey(Plot,related_name="master_plot_details",on_delete=models.CASCADE)
+    sharing = models.BooleanField(default=False)
+    buyer = models.ForeignKey(Person,related_name="plot_buyer_details",on_delete=models.CASCADE,default=None)
 
     def __str__(self):
         return f"{details.number} | {details.owner}"

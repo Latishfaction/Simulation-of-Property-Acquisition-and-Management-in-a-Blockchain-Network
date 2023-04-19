@@ -134,9 +134,12 @@ def my_properties(request,plot_no):
     # get the property from plot no and show it in the html page
     property_details=get_plot_withPlotno(plot_no)
     titles = property_details.property_title_chain.all()
+    titles = reversed(titles)
     return render(request, "POAM_portal/myproperty_view.html",{
         "property":property_details,
         "titles":titles,
+        # getsharedAckStatus
+        "sharedAckStatus":False,
     })
 
 @login_required(login_url="login")

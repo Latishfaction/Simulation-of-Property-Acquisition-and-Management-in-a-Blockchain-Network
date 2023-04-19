@@ -90,37 +90,22 @@ View Property
                     Chain of Property Ownership
                 </div>
                 <div class="title-content-container">
+                    {% for title in titles %}
                     <div class="title-block">
-                        {% for title in titles %}
-                        <!-- <h1>{{title.owner}}</h1>
-                        <h1>{{title.plot}}</h1>
-                        <h1>{{title.ownership_date}}</h1>
-                        <h1>{{title.selling_date}}</h1> -->
                         <div class="title-owner-name">{{title.owner.aadhar_details.first_name}} {{title.owner.aadhar_details.middle_name}} {{title.owner.aadhar_details.last_name}}</div>
                         
                         <div class="title-chain-mini-heading">Date of Ownership</div>
-                        <div class="title-chain-own-date">15 Jan 2023</div>
+                        <div class="title-chain-own-date">{{title.ownership_date.day}}/{{title.ownership_date.month}}/{{title.ownership_date.year}}</div>
+                        {% if title.selling_date %}
                         <div class="title-chain-mini-heading">Date of Sell</div>
-                        <div class="title-chain-own-date">26 Sept 2023</div>
-                        {% endfor %}
+                        <div class="title-chain-own-date">{{title.selling_date.day}}/{{title.selling_date.month}}/{{title.selling_date.year}}</div>
+                        {% endif %}
                     </div>
-                    <!-- <div class="title-block">
-                        <div class="title-owner-name">Rahul Suresh Kajariya</div>
-                        <div class="title-chain-mini-heading">Date of Ownership</div>
-                        <div class="title-chain-own-date">15 Jan 2023</div>
-                        <div class="title-chain-mini-heading">Date of Sell</div>
-                        <div class="title-chain-own-date">26 Sept 2023</div>
-                    </div>
-                    <div class="title-block">
-                        <div class="title-owner-name">Rahul Suresh Kajariya</div>
-                        <div class="title-chain-mini-heading">Date of Ownership</div>
-                        <div class="title-chain-own-date">15 Jan 2023</div>
-                        <div class="title-chain-mini-heading">Date of Sell</div>
-                        <div class="title-chain-own-date">26 Sept 2023</div>
-                    </div> -->
+                    {% endfor %}
                 </div>
             </div>
-
+            
+            {% if sharedAckStatus %}
             <!-- shared acknowledgement -->
             <div class="shared-ack-container">
                 <div class="title-chain-heading">
@@ -137,6 +122,7 @@ View Property
                     </div>
                 </div>
             </div>
+            {% endif %}
         </div>
     </div>
 </div>
