@@ -12,6 +12,7 @@ urlpatterns = [
     path("home/<str:plot_no>/myproperties", views.my_properties, name="myproperty"),
     path("home/<str:plot_no>/shareProperty", views.SharedProperty_view, name="sharedproperty"),
     path("home/<str:plot_no>/agreement", views.agreement_view, name="agreement_view"),
+    path("/make_agreement", views.make_agreement, name="make_agreement"),
     path("home/<str:plot_no>/saledeed", views.saledeed_view, name="saledeed_view"),
     path("bank", views.bank, name="bank"),
 ]

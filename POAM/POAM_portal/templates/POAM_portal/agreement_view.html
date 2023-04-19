@@ -17,6 +17,8 @@ Agreement
         </div>
         <div id="line"></div>
 
+        <form action="{% url 'make_agreement' %}" method="POST">
+            {% csrf_token %}
         <div class="myproperty-info-container">
             <!-- purchaser details -->
             <div class="title-chain-heading">
@@ -24,13 +26,14 @@ Agreement
             </div>
             <div class="user-contract-info-details-container">
                 <div class="user-contract-content">
-                    <span class="user-contract-name">Jagat Ram Nagpurkar</span>
+                    <span class="user-contract-name">{{purchaser.aadhar_details.first_name}} {{purchaser.aadhar_details.middle_name}} {{purchaser.aadhar_details.last_name}}</span>
                     <span class="user-contract-id-info">
                         <span class="aadhar-heading">Aadhar no</span>
-                        <span class="aadhar-no">123412341234</span>
+                        <span class="aadhar-no">{{purchaser.aadhar_details.aadhar_no}}</span>
+                        <input type="text" name="purchaser" value="{{purchaser.aadhar_details.aadhar_no}}" hidden>
                     </span>
                 </div>
-                <img src="https://st3.depositphotos.com/6672868/13701/v/600/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="user-profile" class="user-contract-img">
+                <img src="../../static/POAM_portal/images/Om_Ramesh_Mahajan.jpg" alt="user-profile" class="user-contract-img">
             </div>
 
             <!-- seller details -->
@@ -39,13 +42,13 @@ Agreement
             </div>
             <div class="user-contract-info-details-container">
                 <div class="user-contract-content">
-                    <span class="user-contract-name">Jagat Ram Nagpurkar</span>
+                    <span class="user-contract-name">{{seller.aadhar_details.first_name}} {{seller.aadhar_details.middle_name}} {{seller.aadhar_details.last_name}}</span>
                     <span class="user-contract-id-info">
                         <span class="aadhar-heading">Aadhar no</span>
-                        <span class="aadhar-no">123412341234</span>
+                        <span class="aadhar-no">{{seller.aadhar_details.aadhar_no}}</span>
                     </span>
                 </div>
-                <img src="https://st3.depositphotos.com/6672868/13701/v/600/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="user-profile" class="user-contract-img">
+                <img src="../../static/POAM_portal/images/Manish_Jain_4ScCtu5.jpg" alt="user-profile" class="user-contract-img">
             </div>
 
 
@@ -56,54 +59,54 @@ Agreement
             <div class="myproperty-form-info-container">
                 <div class="fields">
                     <label for="plot.no">Plot. No</label>
-                    <input type="text" value="text to fill" disabled>
+                    <input type="text" value="{{plot.number}}" disabled>
                 </div>
 
                 <div class="fields">
                     <label for="plotArea">Plot Area</label>
-                    <input type="text" value="text to fill" disabled>
+                    <input type="text" value="{{plot.area}}" disabled>
                 </div>
 
                 <div class="fields">
                     <label for="plot.no">Plot Length</label>
-                    <input type="text" value="text to fill" disabled>
+                    <input type="text" value="{{plot.length}}" disabled>
                 </div>
 
                 <div class="fields">
                     <label for="plot.no">Plot Width</label>
-                    <input type="text" value="text to fill" disabled>
+                    <input type="text" value="{{plot.width}}" disabled>
                 </div>
                 <div class="fields">
                     <label for="plot.no">Plot Unit</label>
-                    <input type="text" value="text to fill" disabled>
+                    <input type="text" value="{{plot.unit}}" disabled>
                 </div>
                 <div class="fields">
                     <label for="plot.no">Society Name</label>
-                    <input type="text" value="text to fill" disabled>
+                    <input type="text" value="{{plot.society_name}}" disabled>
                 </div>
                 <div class="fields">
                     <label for="plot.no">Society Rera no</label>
-                    <input type="text" value="text to fill" disabled>
+                    <input type="text" value="{{plot.society_rera_no}}" disabled>
                 </div>
                 <div class="fields">
                     <label for="plot.no">Address</label>
-                    <textarea name="address" id="plot-address" cols="30" rows="10" disabled>text to fill</textarea>
+                    <textarea name="address" id="plot-address" cols="30" rows="10" disabled>{{plot.plot_address}}</textarea>
                 </div>
                 <div class="fields">
                     <label for="plot.no">North</label>
-                    <input type="text" value="text to fill" disabled>
+                    <input type="text" value="{{plot.north}}" disabled>
                 </div>
                 <div class="fields">
                     <label for="plot.no">South</label>
-                    <input type="text" value="text to fill" disabled>
+                    <input type="text" value="{{plot.south}}" disabled>
                 </div>
                 <div class="fields">
                     <label for="plot.no">East</label>
-                    <input type="text" value="text to fill" disabled>
+                    <input type="text" value="{{plot.east}}" disabled>
                 </div>
                 <div class="fields">
                     <label for="plot.no">West</label>
-                    <input type="text" value="text to fill" disabled>
+                    <input type="text" value="{{plot.west}}" disabled>
                 </div>
 
             </div>
@@ -118,7 +121,7 @@ Agreement
                             Total Amount to be paid to the seller
                         </span>
                         <span class="contract-input">
-                            <input type="number" class="contract-field">
+                            <input type="number" class="contract-field" value="1400000">
                         </span>                        
                     </div>
                 </div>
@@ -132,7 +135,7 @@ Agreement
                         Date till amount to be paid
                     </span>
                     <span class="contract-input">
-                        <input type="date" class="contract-field">
+                        <input type="date" class="contract-field" value="2023-12-12">
                     </span>                        
                 </div>
             </div>
@@ -140,29 +143,15 @@ Agreement
             <div class="title-chain-heading">
                 Seller Witness
             </div>
-            <div class="myproperty-form-info-container">
-                <form action="#" method="post">
-                    {% csrf_token %}
-                    <div class="share-property-form-contract">
-                        <div>
-                            <span class="share-propertyform-label">aadhar card</span>
-                            <input type="text" name="aadhar_no" placeholder="12 Digit Aadhar no." maxlength="12" class="share-property-form-input" required>
-                            <div id="emailHelp" class="form-text">Enter the aadhar card of the person which you want to send property details.</div>
-                        </div>
-                        <div class="validate-aadhar">
-                            <a href="#">Validate Aadhar</a>
-                        </div>
-                        <div>
-                            <span>
-                                <img src="https://st3.depositphotos.com/6672868/13701/v/600/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="photo" id="form-profile-pic">
-                            </span>
-                        </div>
-                        <div>
-                            <span class="share-propertyform-label">name</span>
-                            <input type="text" name="name" class="share-property-form-input" disabled>
-                        </div>
-                    </div>
-                </form>
+            <div class="user-contract-info-details-container">
+                <div class="user-contract-content">
+                    <span class="user-contract-name">{{s_witness.aadhar_details.first_name}} {{s_witness.aadhar_details.middle_name}} {{s_witness.aadhar_details.last_name}}</span>
+                    <span class="user-contract-id-info">
+                        <span class="aadhar-heading">Aadhar no</span>
+                        <span class="aadhar-no">{{s_witness.aadhar_details.aadhar_no}}</span>
+                    </span>
+                </div>
+                <img src="../../static/POAM_portal/images/Chitra_Tripathi.jpg" alt="user-profile" class="user-contract-img">
             </div>
             <a href="#" class="btn-format btn-contract">Send to Purchaser</a>
 
@@ -170,29 +159,15 @@ Agreement
             <div class="title-chain-heading">
                 Purchaser Witness
             </div>
-            <div class="myproperty-form-info-container">
-                <form action="#" method="post">
-                    {% csrf_token %}
-                    <div class="share-property-form" id="contract">
-                        <div>
-                            <span class="share-propertyform-label">aadhar card</span>
-                            <input type="text" name="aadhar_no" placeholder="12 Digit Aadhar no." maxlength="12" class="share-property-form-input" required>
-                            <div id="emailHelp" class="form-text">Enter the aadhar card of the person which you want to send property details.</div>
-                        </div>
-                        <div class="validate-aadhar">
-                            <a href="#">Validate Aadhar</a>
-                        </div>
-                        <div>
-                            <span>
-                                <img src="https://st3.depositphotos.com/6672868/13701/v/600/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="photo" id="form-profile-pic">
-                            </span>
-                        </div>
-                        <div>
-                            <span class="share-propertyform-label">name</span>
-                            <input type="text" name="name" class="share-property-form-input" disabled>
-                        </div>
-                    </div>
-                </form>
+            <div class="user-contract-info-details-container">
+                <div class="user-contract-content">
+                    <span class="user-contract-name">{{p_witness.aadhar_details.first_name}} {{p_witness.aadhar_details.middle_name}} {{p_witness.aadhar_details.last_name}}</span>
+                    <span class="user-contract-id-info">
+                        <span class="aadhar-heading">Aadhar no</span>
+                        <span class="aadhar-no">{{p_witness.aadhar_details.aadhar_no}}</span>
+                    </span>
+                </div>
+                <img src="../../static/POAM_portal/images/Shanti_Mehta.jpg" alt="user-profile" class="user-contract-img">
             </div>
 
             <!-- buttons -->
@@ -201,9 +176,11 @@ Agreement
             align-items: center;
         ">
                 <span><a href="#" class="btn-format cancel-btn user-cancel-btn">Cancel</a></span>
-                <span><a href="#" class="btn-format success-btn user-agreement-btn">Create Agreement</a></span>
+                <span><a href="#" class="btn-format success-btn user-agreement-btn"><input type="submit" value="Create Agreement"></a>
+                </span>
             </div>
         </div>
+        </form>
     </div>
 </div>
 {% endblock %}

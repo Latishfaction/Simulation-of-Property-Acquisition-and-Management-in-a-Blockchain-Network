@@ -80,7 +80,8 @@ def deploy_agreement():
     # print(agreement_contract.functions.getDate().call())
     # print(agreement_contract.functions.setDate())
 
-    setDate = agreement_contract.functions.setDate("12-03-2021").build_transaction(
+    # setting date
+    setDate = agreement_contract.functions.setDate(date).build_transaction(
         {
             "chainId": chainId,
             "from": my_address,
@@ -91,5 +92,33 @@ def deploy_agreement():
 
     # deploy transaction to ganache
     tx_hash = w3.eth.send_raw_transaction(signed_setDate.rawTransaction)
+    tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
+
+    # setting seller and purchaser
+    setPurchaser = agreement_contract.functions.setPurchaser(purchaser).build_transaction(
+        {
+            "chainId": chainId,
+            "from": my_address,
+            "nonce": nonce + 1,
+        }
+    )
+    signed_setPurchaser = w3.eth.account.sign_transaction(setPurchaser, private_key=private_key)
+
+    # deploy transaction to ganache
+    tx_hash = w3.eth.send_raw_transaction(signed_setPurchaser.rawTransaction)
+    tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
+   
+    # set seller
+    setSeller = agreement_contract.functions.setSeller(seller).build_transaction(
+        {
+            "chainId": chainId,
+            "from": my_address,
+            "nonce": nonce + 1,
+        }
+    )
+    signed_setSeller = w3.eth.account.sign_transaction(setSeller, private_key=private_key)
+
+    # deploy transaction to ganache
+    tx_hash = w3.eth.send_raw_transaction(signed_setSeller.rawTransaction)
     tx_receipt = w3.eth.wait_for_transaction_receipt(tx_hash)
 

@@ -50,19 +50,30 @@ contract Agreement {
         seller = _seller;
     }
 
-    function setP_details() public {
-        plot_details.number = 1;
-        plot_details.area = "1000.00";
-        plot_details.length = "500.00";
-        plot_details.width = "500.00";
-        plot_details.society_name = "Shreesai Housing Society";
-        plot_details.society_rera_no = "002/B-56";
-        plot_details
-            .plot_address = "Plot no 43,Near Maha-Laxmi Market, Peace Road, Laxman Nagar, Nagpur-33";
-        plot_details.north = "Other Plot";
-        plot_details.south = "Road 11X20ft";
-        plot_details.east = "Road 11X20ft";
-        plot_details.west = "Other Plot";
+    function setP_details(
+        uint256 number,
+        string memory area,
+        string memory length,
+        string memory width,
+        string memory society_name,
+        string memory society_rera_no,
+        string memory plot_address,
+        string memory north,
+        string memory south,
+        string memory east,
+        string memory west
+    ) public {
+        plot_details.number = number;
+        plot_details.area = area;
+        plot_details.length = length;
+        plot_details.width = width;
+        plot_details.society_name = society_name;
+        plot_details.society_rera_no = society_rera_no;
+        plot_details.plot_address = plot_address;
+        plot_details.north = north;
+        plot_details.south = south;
+        plot_details.east = east;
+        plot_details.west = west;
     }
 
     function set_total_Amt(uint256 _total_amount) public {

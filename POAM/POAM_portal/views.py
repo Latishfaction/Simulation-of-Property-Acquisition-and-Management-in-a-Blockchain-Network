@@ -154,12 +154,51 @@ def my_properties(request,plot_no):
 def SharedProperty_view(request,plot_no):
     return render(request, "POAM_portal/shared_property_view.html")
 
+
+
 @login_required(login_url="login")
 def agreement_view(request,plot_no):
-    return render(request, "POAM_portal/agreement_view.html")
+    purchaser = get_aadhar(216167293627)
+    seller = get_aadhar(request.user.username)
+    print(purchaser)
+    print(seller)
+    plot_details = get_plot_withPlotno(2)
+    amt_paid = 1400000
+    seller_witness = get_aadhar(265548772011)
+    purchaser_witness = get_aadhar(621336314249)
+    return render(request, "POAM_portal/agreement_view.html",{
+        "purchaser":purchaser,
+        "seller":seller,
+        "plot":plot_details,
+        "amt_details":amt_paid,
+        "s_witness":seller_witness,
+        "p_witness":purchaser_witness,
+    })
 
 def saledeed_view(request,plot_no):
     return render(request,"POAM_portal/saledeed_view.html")
 
 def bank(request):
     return render(request, "POAM_portal/bank.html")
+
+def make_agreement(request):
+    purchaser = get_aadhar(216167293627)
+    seller = get_aadhar(request.user.username)
+    # print(purchaser)
+    # print(seller)
+    plot_details = get_plot_withPlotno(2)
+    amt_paid = 1400000
+    seller_witness = get_aadhar(265548772011)
+    purchaser_witness = get_aadhar(621336314249)
+    print("Making agreement")
+    print("**************************************")
+    print("executing agreement")
+    print("**************************************")
+    return render(request, "POAM_portal/agreement_view.html",{
+        "purchaser":purchaser,
+        "seller":seller,
+        "plot":plot_details,
+        "amt_details":amt_paid,
+        "s_witness":seller_witness,
+        "p_witness":purchaser_witness,
+    })
