@@ -127,7 +127,15 @@ def home_view(request, user):
 
 @login_required(login_url="login")
 def share_property(request,user):
-    return render(request, "POAM_portal/share_property.html")
+    return render(request, "POAM_portal/share_property.html",{
+        "aadhars": Person.objects.filter(),
+    })
+
+# def saveSharing(request,user):
+#     print(user)
+#     print(request.POST)
+#     return HttpResponseRedirect(reverse('home'))
+
 
 @login_required(login_url="login")
 def my_properties(request,plot_no):

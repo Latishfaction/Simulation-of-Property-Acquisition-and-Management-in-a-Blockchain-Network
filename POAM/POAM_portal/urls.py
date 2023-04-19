@@ -8,6 +8,7 @@ urlpatterns = [
     path("status/<int:status>", views.success_status, name="status"),
     path("home/<str:user>", views.home_view, name="home"),
     path("<str:user>/share", views.share_property, name="share"),
+    # path("<str:user>/saveshare", views.saveSharing, name="saveSharing"),
     path("home/<str:plot_no>/myproperties", views.my_properties, name="myproperty"),
     path("home/<str:plot_no>/shareProperty", views.SharedProperty_view, name="sharedproperty"),
     path("home/<str:plot_no>/agreement", views.agreement_view, name="agreement_view"),

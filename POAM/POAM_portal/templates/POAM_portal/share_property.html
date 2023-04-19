@@ -17,29 +17,27 @@ Share Property
             
         </div>
         <div id="line"></div>
-        <form action="#" method="get">
             <div class="share-property-form">
-                <div>
-                    <span class="share-propertyform-label">aadhar card</span>
-                    <input type="text" name="aadhar_no" placeholder="12 Digit Aadhar no." maxlength="12" class="share-property-form-input" required>
-                    <div id="emailHelp" class="form-text">Enter the aadhar card of the person which you want to send property details.</div>
-                </div>
-                <div class="validate-aadhar">
-                    <a href="#">Validate Aadhar</a>
-                </div>
-                <div>
-                    <span>
-                        <img src="https://st3.depositphotos.com/6672868/13701/v/600/depositphotos_137014128-stock-illustration-user-profile-icon.jpg" alt="photo" id="form-profile-pic">
-                    </span>
-                </div>
-                <div>
-                    <span class="share-propertyform-label">name</span>
-                    <input type="text" name="name" class="share-property-form-input" disabled>
-                </div>
+                <form action="{% url 'saveSharing' user.username  %}" method="post">
+                    {% csrf_token %}
+                    <div>
+                        <span class="share-propertyform-label">aadhar card</span>
+                        <div class="shared-users-name-container">
+                            <select name="shared-users" id="Sharedusers">
+                                {% for aadhar in aadhars %}
+                                {% if user.username != aadhar.aadhar_details.aadhar_no %}
+                                <option value="{{aadhar.aadhar_details.aadhar_no}}" default>{{aadhar}}</option>
+                                {% endif %}
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <span id="share-property-button"><input type="submit" value="Share"><img src="../../static/POAM_portal/images/share-property.png" alt="share" id="share-property-icon"></span>
+                    </div>
+                </form>
                 
-                <span id="share-property-button"><input type="submit" value="Share"><img src="../../static/POAM_portal/images/share-property.png" alt="share" id="share-property-icon"></span>
-            </div>
-        </form>
+
         <div class="sharing-info">
             <span class="sharing-info-heading">What property details others can able to see.... </span>
             <div class="property-details-info">Plot. No, Area, Property Dimensions, Society, Location information and Chain of titles (Chain of previous owners of the property)</div>
