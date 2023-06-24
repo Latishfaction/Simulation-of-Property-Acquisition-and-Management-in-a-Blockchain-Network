@@ -3,13 +3,43 @@
 Taking Property related daata from various sources by using Aadhar data as a primary authenticator and storing the proeprty transaction in pre-acquisition state that is "Agreement" and "Sale Deed", Also process after math of buying the property like changing the owner name in property tax, and other such documents.
 
 
+
+
 ## Features
 
-- Prevent Double Selling
-- Maintain interoperability
-- Stored data in the form of smart contract
-- Less transaction of the property
+- User sign-in
+- Buy Property
+    - Send buy request
+    - Create Agreement
+    - Publish Agreement
+- Sell Property
+- Use Aadhar Card as primary authenticator
+- Integrated with 
+    - Banks to get hassle-free loans on property
+    - Tax Authority to get tax(tax-default/non-default) information on property.
 
+Note : Data sources of banks,tax,aadhar data created by using "dummy data".No real-time data is being used in this simulation.
+
+
+
+## Dependencies
+- Ganache 2.7.0
+- Python 3.10.10
+    - Django 4.1.7
+    - Web3.py 5.31.3
+## Run the project
+
+Clone the file and run the django project
+
+```bash
+  python manage.py runserver
+```
+### Default user credentials
+| Aadhar Number  | Password |
+| ------------- | ------------- |
+| Latish (admin only)  | 123  |
+| 838427959970  | 123  |
+| 662223509284  | 123  |
 
 ## Modules
 ### Aadhar DB (managed by uidai)
@@ -57,3 +87,13 @@ main module is the front-end to the user, where they can see the following detai
 - Make payment to buy the property.
 - After successfull complition of the "Agreement" and buyer and purchaser can create the "Sale Deed" in the form of smart contract.
 - After Agreement and sale Deed they can register their property to the **SARATHI DB** by providing the details of smart contract transactions, hence it will make paperless transction of property possible.
+
+## Figma Design Board
+### [UI Design with figma](https://www.figma.com/file/lZrRiL7NdJ048PzcwIagQx/website-uiux?type=design&node-id=0-1&mode=design)
+
+## Authors
+
+- [@latishfaction](https://www.github.com/latishfaction)
+- [Ankit Harjal]()
+- [Akansha Shende]()
+- [Neelam Thakur]()
