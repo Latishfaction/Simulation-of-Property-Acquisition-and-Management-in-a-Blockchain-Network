@@ -1,9 +1,6 @@
 # Simulation of Property  Acquisition and Management in a Blockchain Network
 
-Taking Property related daata from various sources by using Aadhar data as a primary authenticator and storing the proeprty transaction in pre-acquisition state that is "Agreement" and "Sale Deed", Also process after math of buying the property like changing the owner name in property tax, and other such documents.
-
-
-
+Taking Property related data from various sources by using Aadhar data as a primary authenticator and storing the property transaction in pre-acquisition state that is "Agreement" and "Sale Deed", Also process after-math of buying the property like changing the owner name in property tax, and other such documents.
 
 ## Features
 
